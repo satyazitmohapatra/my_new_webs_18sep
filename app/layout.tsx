@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
-import { BootSequence } from "@/components/BootSequence";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KUNAL.OS | AI/ML Engineer",
+  title: "SM | AI/ML Engineer",
   description: "Interactive personal operating system and developer command center.",
 };
 
@@ -25,11 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="bg-background text-foreground flex flex-col md:flex-row min-h-screen overflow-hidden">
-        <BootSequence />
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}>
+      <body className="bg-background text-foreground min-h-screen">
         <Navigation />
-        <main className="flex-1 overflow-y-auto relative h-[100dvh] md:h-screen">
+        <main className="relative">
           {children}
         </main>
       </body>

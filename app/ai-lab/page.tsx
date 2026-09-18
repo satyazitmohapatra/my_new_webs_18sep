@@ -69,7 +69,7 @@ export default function AILab() {
               <motion.div 
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
-                className="bg-muted/10 border border-border p-4 font-mono text-sm space-y-2 mt-6"
+                className="bg-muted border border-border p-4 font-mono text-sm space-y-2 mt-6"
               >
                 <div className="flex justify-between items-center border-b border-border pb-2">
                   <span className="text-muted-foreground">RISK PROBABILITY:</span>

@@ -65,7 +65,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
           {project.architecture && (
             <section>
               <h2 className="font-mono text-xs text-muted-foreground border-b border-border pb-2 mb-4">SYSTEM ARCHITECTURE</h2>
-              <div className="border border-border p-6 bg-muted/10 font-mono text-sm leading-relaxed">
+              <div className="border border-border p-6 bg-muted font-mono text-sm leading-relaxed">
                 {project.architecture}
               </div>
             </section>

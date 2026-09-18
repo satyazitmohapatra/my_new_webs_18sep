@@ -45,7 +45,7 @@ export default function Contact() {
               )}
             </div>
             
-            <div className="absolute inset-0 bg-muted/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out -z-10" />
+            <div className="absolute inset-0 bg-muted translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out -z-10" />
           </div>
 
           {/* Social Links */}

@@ -1,30 +1,26 @@
 export const skills = [
   {
-    category: "LANGUAGES",
-    items: ["Python", "JavaScript", "TypeScript", "SQL", "C++"]
+    capability: "I KNOW HOW TO BUILD WEB APPLICATIONS",
+    exactSkills: ["HTML", "CSS", "JavaScript", "Python (DSA)", "C", "Java", "SQL", "Flask"]
   },
   {
-    category: "AI / ML",
-    items: ["NumPy", "Pandas", "Scikit-learn", "TensorFlow", "PyTorch", "GenAI", "LLMs"]
+    capability: "I KNOW HOW TO MANIPULATE & VISUALIZE COMPLEX DATA",
+    exactSkills: ["Pandas", "NumPy", "Data Preprocessing", "Matplotlib", "Seaborn", "Streamlit"]
   },
   {
-    category: "BACKEND",
-    items: ["FastAPI", "Flask", "Node.js", "Express"]
+    capability: "I KNOW HOW TO TRAIN & OPTIMIZE ML MODELS",
+    exactSkills: ["Scikit-Learn", "ML Algorithms", "Regression & Classification", "Model Evaluation"]
   },
   {
-    category: "DATABASE",
-    items: ["PostgreSQL", "MongoDB", "Redis"]
+    capability: "I KNOW HOW TO ARCHITECT CLOUD INFRASTRUCTURE",
+    exactSkills: ["Cloud Infrastructure", "Azure", "CI/CD", "Git/GitHub", "Linux CLI", "VS Code"]
   },
   {
-    category: "CLOUD",
-    items: ["Azure", "AWS"]
+    capability: "I KNOW HOW TO CONTAINERIZE APPLICATIONS",
+    exactSkills: ["Docker", "Containerisation"]
   },
   {
-    category: "DEVOPS",
-    items: ["Docker", "Kubernetes", "GitHub Actions", "Terraform"]
-  },
-  {
-    category: "TOOLS",
-    items: ["Git", "GitHub", "VS Code", "Linux"]
+    capability: "I KNOW HOW TO ORCHESTRATE DEPLOYMENTS",
+    exactSkills: ["Kubernetes", "Microservices Architecture"]
   }
 ];

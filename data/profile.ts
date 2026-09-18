@@ -1,27 +1,27 @@
 export const profile = {
-  name: "Kunal Mohapatra",
-  title: "AI/ML Engineer • Full-Stack Developer • Cloud & DevOps",
-  tagline: "\"Teaching machines to think, even if I can't sometimes.\"",
+  name: "Satyajit Mohapatra",
+  title: "AI/ML Engineer • Cloud & DevOps Builder",
+  tagline: "Aspiring ML Engineer with a growing focus on MLOps, cloud infrastructure, and application deployment.",
   about: {
-    whoIAm: "I am a software engineer specializing in artificial intelligence and distributed systems. I build things that scale, think, and look good doing it.",
-    whatIBuild: "I design and develop end-to-end applications, from fine-tuning ML models to architecting cloud infrastructure and crafting premium user interfaces.",
-    whatImLearning: "Currently deep diving into large language model orchestration, advanced RAG architectures, and Rust for high-performance systems.",
-    whatICareAbout: "I care about clean code, robust architecture, and user experiences that feel intuitive and fast."
+    whoIAm: "I am an aspiring Machine Learning Operative Engineer focused on building end-to-end data-driven applications.",
+    whatIBuild: "I build predictive models, integrate ML into interactive web applications, and develop scalable cloud architectures.",
+    whatImLearning: "Exploring the intersections of scalable cloud infrastructure, MLOps, containerization, and automated CI/CD pipelines.",
+    whatICareAbout: "I care about building efficient, impactful software that solves real-world problems and scaling systems seamlessly."
   },
   metrics: {
-    githubRepos: 42,
-    projectsShipped: 15,
-    technologies: 24,
-    yearsCoding: "4+"
+    githubRepos: 18,
+    projectsShipped: 10,
+    technologies: 20,
+    yearsCoding: "2+"
   },
   systemStatus: {
     status: "SYSTEM ONLINE",
-    location: "Global",
-    focus: ["AI", "Machine Learning", "Cloud", "Distributed Systems", "GenAI"]
+    location: "Bhubaneswar, India",
+    focus: ["Machine Learning", "Full-Stack Web", "Cloud", "MLOps"]
   },
   contact: {
-    email: "hello@kunal.os",
-    github: "https://github.com/kunal",
-    linkedin: "https://linkedin.com/in/kunal"
+    email: "mohapatrasatyajit2006@gmail.com",
+    github: "https://github.com/satyazitmohapatra",
+    linkedin: "https://www.linkedin.com/in/satyajit-mohapatra"
   }
 };

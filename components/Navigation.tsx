@@ -1,72 +1,58 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
-import { 
-  Terminal, 
-  Cpu, 
-  FolderGit2, 
-  Wrench, 
-  Network, 
-  GitBranch, 
-  ScrollText, 
-  User, 
-  Mail 
-} from "lucide-react";
-import clsx from "clsx";
-
-const NAV_ITEMS = [
-  { name: "Dashboard", href: "/", icon: Cpu },
-  { name: "Projects", href: "/projects", icon: FolderGit2 },
-  { name: "AI Lab", href: "/ai-lab", icon: Wrench }, // Or something more AI related
-  { name: "Arsenal", href: "/arsenal", icon: Wrench },
-  { name: "Infrastructure", href: "/infrastructure", icon: Network },
-  { name: "GitHub", href: "/github", icon: GitBranch },
-  { name: "Battle Log", href: "/battle-log", icon: ScrollText },
-  { name: "Terminal", href: "/terminal", icon: Terminal },
-  { name: "About", href: "/about", icon: User },
-  { name: "Contact", href: "/contact", icon: Mail },
-];
+import { profile } from "@/data/profile";
+import { useEffect, useState } from "react";
+import { Sun, Moon } from "lucide-react";
 
 export function Navigation() {
-  const pathname = usePathname();
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    const currentTheme = localStorage.getItem("theme") || "dark";
+    setTheme(currentTheme);
+    if (currentTheme === "light") {
+      document.documentElement.classList.add("light");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    if (newTheme === "light") {
+      document.documentElement.classList.add("light");
+    } else {
+      document.documentElement.classList.remove("light");
+    }
+    localStorage.setItem("theme", newTheme);
+  };
 
   return (
-    <nav className="w-full md:w-64 border-t md:border-t-0 md:border-r border-border bg-background z-40 flex flex-row md:flex-col justify-between shrink-0 fixed bottom-0 md:relative md:h-screen">
-      {/* Brand / Logo */}
-      <div className="hidden md:flex p-6 items-center border-b border-border">
-        <span className="font-mono text-sm tracking-widest font-bold">KUNAL.OS</span>
-        <span className="ml-2 w-2 h-2 rounded-full bg-foreground animate-pulse"></span>
-      </div>
-
-      {/* Nav Links */}
-      <div className="flex-1 overflow-x-auto md:overflow-y-auto flex flex-row md:flex-col py-2 md:py-4 px-2 md:px-4 gap-1 md:gap-2 no-scrollbar">
-        {NAV_ITEMS.map((item) => {
-          const isActive = pathname === item.href;
-          const Icon = item.icon;
+    <header className="absolute top-0 left-0 w-full p-4 md:p-8 z-50 flex flex-col items-center justify-center">
+      <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0 max-w-7xl mx-auto">
+        <h1 className="text-xl md:text-2xl font-bold tracking-tighter text-foreground uppercase">
+          {profile.name}
+        </h1>
+        
+        <div className="flex items-center gap-6 md:gap-12">
+          <nav className="flex items-center gap-4 text-[10px] md:text-xs font-mono text-muted-foreground uppercase tracking-widest">
+            <Link href="#home" className="hover:text-foreground transition-colors">Home</Link>
+            <div className="w-1.5 h-1.5 bg-muted-foreground" />
+            <Link href="#projects" className="hover:text-foreground transition-colors">Projects</Link>
+          </nav>
           
-          return (
-            <Link 
-              key={item.href} 
-              href={item.href}
-              className={clsx(
-                "relative flex items-center gap-3 px-3 md:px-4 py-3 md:py-2.5 rounded-sm transition-colors text-sm font-mono shrink-0 md:shrink",
-                isActive ? "text-background bg-foreground" : "text-muted-foreground hover:text-foreground hover:bg-muted"
-              )}
-            >
-              <Icon size={16} className={clsx(isActive ? "text-background" : "")} />
-              <span className="hidden md:inline">{item.name.toUpperCase()}</span>
-            </Link>
-          );
-        })}
+          <button 
+            onClick={toggleTheme}
+            className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest bg-foreground/5 px-3 py-1.5 rounded-full md:bg-transparent md:px-0 md:py-0 md:rounded-none"
+          >
+            {theme === 'dark' ? (
+              <><Sun size={14} /> Bright</>
+            ) : (
+              <><Moon size={14} /> Dark</>
+            )}
+          </button>
+        </div>
       </div>
-
-      {/* Status Bar */}
-      <div className="hidden md:block p-4 border-t border-border font-mono text-xs text-muted-foreground">
-        <div>STATUS: ONLINE</div>
-        <div>V: 1.0.0</div>
-      </div>
-    </nav>
+    </header>
   );
 }

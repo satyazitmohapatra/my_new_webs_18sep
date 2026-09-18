@@ -17,38 +17,69 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "PROJECT_001",
-    title: "SWACHHLENS",
-    description: "AI-powered civic decision support system.",
+    title: "FOOD DELIVERY PLATFORM",
+    description: "Full-stack food delivery application with secure management and automated deployment.",
     status: "DEPLOYED",
-    stack: ["Python", "AI/ML", "React", "Docker", "Cloud"],
-    problem: "Inefficient waste management and lack of data-driven civic decision making in urban areas.",
-    solution: "A computer vision platform that analyzes CCTV footage to detect civic anomalies and predict maintenance requirements.",
-    architecture: "Edge inference using optimized PyTorch models, reporting to a centralized FastAPI backend, with a Next.js frontend for municipal authorities.",
-    ai: "YOLOv8 fine-tuned on custom datasets for civic issue detection. Forecasting models for anomaly prediction.",
-    results: "Reduced response time by 40% in pilot deployments.",
-    deployment: "Containerized with Docker, orchestrated via Kubernetes on AWS.",
-    github: "https://github.com/kunal/swachhlens",
-    demo: "https://swachhlens.demo"
+    stack: ["Docker", "Azure", "CI/CD", "RESTful APIs", "SQL"],
+    problem: "Managing scalable end-to-end food delivery including authentication, menus, and order tracking.",
+    solution: "Developed a full-stack platform with RESTful APIs, containerized via Docker, and deployed via Azure CI/CD pipelines.",
+    architecture: "Frontend communicating with backend services via REST APIs, backed by a relational database and orchestrated on Microsoft Azure.",
+    deployment: "Containerized with Docker, deployed on Microsoft Azure using CI/CD pipelines.",
+    github: "https://github.com/satyazitmohapatra"
   },
   {
     id: "PROJECT_002",
-    title: "CITYZEN",
-    description: "Urban planning data intelligence platform.",
+    title: "HEALTH DIAGNOSTIC HUB",
+    description: "Centralized web application hosting multiple ML models for disease prediction.",
     status: "DEPLOYED",
-    stack: ["TypeScript", "Next.js", "PostgreSQL", "FastAPI"],
-    problem: "Disjointed urban data preventing cohesive city planning.",
-    solution: "Aggregated dashboard bringing together traffic, pollution, and population density data.",
-    architecture: "Microservices architecture ingesting public data APIs, stored in a spatial database (PostGIS).",
-    github: "https://github.com/kunal/cityzen"
+    stack: ["Python", "Machine Learning", "Web", "Model Optimization"],
+    problem: "Scattered diagnostic tools make real-time multi-disease prediction difficult.",
+    solution: "Developed a centralized hub hosting multiple ML models for real-time diagnostic insights.",
+    ai: "Implemented and optimized predictive algorithms to analyze health parameters.",
+    github: "https://github.com/satyazitmohapatra/heart_disease_predictor"
   },
   {
     id: "PROJECT_003",
-    title: "CHATAPP",
-    description: "High-performance real-time messaging system.",
-    status: "IN_PROGRESS",
-    stack: ["Go", "Redis", "WebSockets", "React"],
-    problem: "Existing solutions have high latency at scale.",
-    solution: "Custom WebSocket router utilizing Redis Pub/Sub for horizontal scalability.",
-    github: "https://github.com/kunal/chatapp"
+    title: "CITYZEN",
+    description: "Crowd-sourced civic issue reporting and tracking platform.",
+    status: "DEPLOYED",
+    stack: ["Flask", "MySQL", "Web", "Data Visualization"],
+    problem: "Lack of a centralized, tracked platform for community members to report civic anomalies.",
+    solution: "Engineered a web platform utilizing Flask and MySQL for backend integration and community data visualization.",
+    architecture: "Flask backend processing reports and storing them in a MySQL database for visualization.",
+    github: "https://github.com/satyazitmohapatra/Citizen-Gravience-System"
+  },
+  {
+    id: "PROJECT_004",
+    title: "LAPTOP PRICE PREDICTOR",
+    description: "Predictive ML model to estimate laptop prices based on hardware configurations.",
+    status: "DEPLOYED",
+    stack: ["Python", "Machine Learning", "Data Preprocessing"],
+    problem: "Estimating accurate tech hardware prices based on mixed categorical and numerical specs.",
+    solution: "Built a predictive model utilizing advanced preprocessing techniques for mixed datasets.",
+    ai: "Regression modeling with extensive feature engineering and preprocessing.",
+    github: "https://github.com/satyazitmohapatra/laptop_price_predictor"
+  },
+  {
+    id: "PROJECT_005",
+    title: "BANGALORE HOUSE PREDICTOR",
+    description: "Regression-based model integrated with a user-friendly frontend for real-time property estimates.",
+    status: "DEPLOYED",
+    stack: ["Python", "Machine Learning", "Web", "Regression"],
+    problem: "Users needed a real-time, interactive way to estimate real estate prices in Bangalore.",
+    solution: "Designed a regression model and integrated its backend logic with a frontend interface for real-time estimation.",
+    ai: "Regression-based predictive algorithms.",
+    github: "https://github.com/satyazitmohapatra/Bangalore-HousePrice-Prediction-Model"
+  },
+  {
+    id: "PROJECT_006",
+    title: "OLYMPIC DATA ANALYSIS",
+    description: "Interactive data visualization of 120 years of Olympic athlete performance.",
+    status: "DEPLOYED",
+    stack: ["Python", "Pandas", "Seaborn", "Data Visualization"],
+    problem: "Extracting meaningful trends from over a century of complex athletic data.",
+    solution: "Conducted extensive EDA using Pandas and Seaborn to identify trends in medal counts and participation.",
+    architecture: "Data pipelines transforming raw historical data into interactive visualizations.",
+    github: "https://github.com/satyazitmohapatra"
   }
 ];

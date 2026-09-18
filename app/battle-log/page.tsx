@@ -26,10 +26,10 @@ export default function BattleLog() {
               key={log.id}
               className="border border-border bg-background overflow-hidden"
               initial={false}
-              animate={{ backgroundColor: isExpanded ? "var(--color-muted)/10" : "transparent" }}
+              animate={{ backgroundColor: isExpanded ? "var(--color-muted)" : "transparent" }}
             >
               <button 
-                className="w-full text-left p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-muted/20 transition-colors"
+                className="w-full text-left p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-muted transition-colors"
                 onClick={() => setExpandedId(isExpanded ? null : log.id)}
               >
                 <div>

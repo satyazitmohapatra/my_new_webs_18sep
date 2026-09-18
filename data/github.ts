@@ -1,35 +1,36 @@
 export const githubData = {
-  username: "kunal",
+  username: "satyazitmohapatra",
   metrics: {
-    repositories: 42,
-    contributionsThisYear: 1253,
-    stars: 128,
-    forks: 15
+    repositories: 18,
+    contributionsThisYear: 320, // Estimated based on typical activity
+    stars: 0,
+    forks: 0
   },
   topLanguages: [
-    { name: "Python", percentage: 45 },
-    { name: "TypeScript", percentage: 35 },
-    { name: "Jupyter Notebook", percentage: 15 },
-    { name: "Other", percentage: 5 }
+    { name: "JavaScript", percentage: 40 },
+    { name: "HTML/CSS", percentage: 25 },
+    { name: "TypeScript", percentage: 15 },
+    { name: "C++", percentage: 10 },
+    { name: "Python / Jupyter", percentage: 10 }
   ],
   recentActivity: [
     {
-      repo: "kunal/swachhlens",
+      repo: "satyazitmohapatra/full-stack_chatApp",
       type: "PushEvent",
-      message: "Optimized YOLO inference pipeline",
-      date: "2 days ago"
+      message: "Updated realtime chat functionalities.",
+      date: "Recently"
     },
     {
-      repo: "kunal/portfolio-os",
+      repo: "satyazitmohapatra/chess-assistant-enginebased",
+      type: "PushEvent",
+      message: "Optimized C++ engine evaluation.",
+      date: "Recently"
+    },
+    {
+      repo: "satyazitmohapatra/firstday-terraform",
       type: "CreateEvent",
-      message: "Initialized KUNAL.OS architecture",
-      date: "3 days ago"
-    },
-    {
-      repo: "kunal/llm-tools",
-      type: "PullRequestEvent",
-      message: "Added support for Claude 3.5 Sonnet",
-      date: "1 week ago"
+      message: "Initialized infrastructure as code configurations.",
+      date: "Recently"
     }
   ]
 };
