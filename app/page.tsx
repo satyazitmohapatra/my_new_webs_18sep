@@ -393,16 +393,47 @@ export default function SinglePagePortfolio() {
             {"SATYAJIT".split("").map((char, i) => {
               const rotate = [12, -25, 18, -15, 22, -10, 15, -20][i % 8];
               const translateY = [10, 50, -10, 70, 20, 0, 60, 15][i % 8];
+              const hasPerson = i % 2 === 1; // Add person to alternating letters
+              const direction = i % 4 === 1 ? 1 : -1;
+              const duration = 4 + (i % 3);
+              const topOffset = [10, 40, 20, 50, 15, 45, 25, 30][i % 8];
+              
               return (
                 <span 
                   key={i} 
-                  className="inline-block" 
+                  className="relative inline-block" 
                   style={{ 
                     transform: `rotate(${rotate}deg) translateY(${translateY}px)`,
                     marginLeft: i === 0 ? '0' : '-3vw'
                   }}
                 >
                   {char}
+                  {hasPerson && (
+                    <motion.div
+                      initial={{ x: direction === 1 ? -20 : 80 }}
+                      animate={{ x: direction === 1 ? 80 : -20 }}
+                      transition={{ 
+                        duration: duration, 
+                        repeat: Infinity, 
+                        repeatType: "reverse", 
+                        ease: "linear",
+                        delay: i * 0.5 
+                      }}
+                      className="absolute opacity-80"
+                      style={{ 
+                        top: `${topOffset}%`, 
+                        scaleX: direction, 
+                        width: '12px', 
+                        height: '18px',
+                        color: 'var(--foreground)'
+                      }}
+                    >
+                      <svg viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" className="w-full h-full drop-shadow-2xl">
+                        <circle cx="12" cy="4" r="2" fill="currentColor" />
+                        <path d="M12 6.5v6 M12 12.5l-3 5 M12 12.5l3 5 M12 8l-4 3 M12 8l4 3" />
+                      </svg>
+                    </motion.div>
+                  )}
                 </span>
               )
             })}
