@@ -388,19 +388,18 @@ export default function SinglePagePortfolio() {
         </div>
 
         {/* Giant Scattered Name Background */}
-        <div className="absolute -bottom-12 md:-bottom-24 left-0 w-full overflow-hidden flex justify-center items-end pointer-events-none select-none z-10 opacity-[0.15] h-3/4">
-          <div className="flex whitespace-nowrap font-bold tracking-tighter text-[35vw] md:text-[25vw] text-foreground leading-[0.5]">
-            {"SATYAJIT MOHAPATRA".split("").map((char, i) => {
-              if (char === " ") return <span key={i} className="w-[10vw]"></span>;
-              const rotate = [12, -25, 18, -15, 22, -10, 15, -20, 10, -30, 5, -25, 20, -5, 15, -12, 8, -18][i % 18];
-              const translateY = [10, 60, -10, 80, 20, 0, 75, 15, 30, 90, 5, 50, 40, -5, 60, 20, 15, 35][i % 18];
+        <div className="absolute -bottom-10 md:-bottom-20 left-0 w-full overflow-hidden flex justify-center items-end pointer-events-none select-none z-10 opacity-30 h-3/4">
+          <div className="flex whitespace-nowrap font-bold tracking-tighter text-[35vw] md:text-[28vw] text-foreground leading-[0.5]">
+            {"SATYAJIT".split("").map((char, i) => {
+              const rotate = [12, -25, 18, -15, 22, -10, 15, -20][i % 8];
+              const translateY = [10, 50, -10, 70, 20, 0, 60, 15][i % 8];
               return (
                 <span 
                   key={i} 
-                  className="inline-block mix-blend-difference" 
+                  className="inline-block" 
                   style={{ 
                     transform: `rotate(${rotate}deg) translateY(${translateY}px)`,
-                    marginLeft: i === 0 ? '0' : '-4vw'
+                    marginLeft: i === 0 ? '0' : '-3vw'
                   }}
                 >
                   {char}
