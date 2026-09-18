@@ -369,7 +369,7 @@ export default function SinglePagePortfolio() {
       {/* ================================================== */}
       {/* 8. FOOTER */}
       {/* ================================================== */}
-      <section id="contact" className="w-full relative pt-32 pb-48 px-6 md:px-12 bg-background overflow-hidden flex flex-col justify-center min-h-[50vh]">
+      <section id="contact" className="w-full relative pt-32 pb-48 px-6 md:px-12 bg-background overflow-hidden flex flex-col justify-center min-h-[60vh]">
         <div className="w-full flex flex-col items-center justify-center text-center z-20">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-foreground uppercase mb-8 max-w-2xl">
             LET'S CREATE SOMETHING MEANINGFUL
@@ -384,6 +384,29 @@ export default function SinglePagePortfolio() {
           <div className="flex flex-col md:flex-row gap-6 md:gap-12 mt-12 md:mt-24 font-mono text-[10px] tracking-widest text-muted-foreground uppercase">
             <a href={profile.contact.github} target="_blank" className="hover:text-foreground transition-colors">[ GITHUB ]</a>
             <a href={profile.contact.linkedin} target="_blank" className="hover:text-foreground transition-colors">[ LINKEDIN ]</a>
+          </div>
+        </div>
+
+        {/* Giant Scattered Name Background */}
+        <div className="absolute -bottom-12 md:-bottom-24 left-0 w-full overflow-hidden flex justify-center items-end pointer-events-none select-none z-10 opacity-[0.15] h-3/4">
+          <div className="flex whitespace-nowrap font-bold tracking-tighter text-[35vw] md:text-[25vw] text-foreground leading-[0.5]">
+            {"SATYAJIT MOHAPATRA".split("").map((char, i) => {
+              if (char === " ") return <span key={i} className="w-[10vw]"></span>;
+              const rotate = [12, -25, 18, -15, 22, -10, 15, -20, 10, -30, 5, -25, 20, -5, 15, -12, 8, -18][i % 18];
+              const translateY = [10, 60, -10, 80, 20, 0, 75, 15, 30, 90, 5, 50, 40, -5, 60, 20, 15, 35][i % 18];
+              return (
+                <span 
+                  key={i} 
+                  className="inline-block mix-blend-difference" 
+                  style={{ 
+                    transform: `rotate(${rotate}deg) translateY(${translateY}px)`,
+                    marginLeft: i === 0 ? '0' : '-4vw'
+                  }}
+                >
+                  {char}
+                </span>
+              )
+            })}
           </div>
         </div>
       </section>
