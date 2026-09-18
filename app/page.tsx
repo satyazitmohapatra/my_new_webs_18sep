@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { battleLogs } from "@/data/battleLog";
@@ -39,10 +40,11 @@ export default function SinglePagePortfolio() {
           <div className="flex justify-center lg:justify-end z-10">
             <div className="w-full max-w-md aspect-square overflow-hidden bg-muted shadow-2xl relative group">
               <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-              <img 
+              <Image 
                 src="/satyajit_profile.jpg" 
                 alt="Satyajit Mohapatra" 
-                className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
+                fill
+                className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>
           </div>
