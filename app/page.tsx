@@ -9,6 +9,7 @@ import { battleLogs } from "@/data/battleLog";
 import { skills } from "@/data/skills";
 import { useState } from "react";
 import { ArrowRight, ArrowLeft, Plus, Minus, ChevronDown } from "lucide-react";
+import profileImage from "@/public/satyajit_profile.jpg";
 
 export default function SinglePagePortfolio() {
   const [currentProjectIdx, setCurrentProjectIdx] = useState(0);
@@ -41,7 +42,7 @@ export default function SinglePagePortfolio() {
             <div className="w-full max-w-md aspect-square overflow-hidden bg-muted shadow-2xl relative group">
               <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
               <Image 
-                src="/satyajit_profile.jpg" 
+                src={profileImage} 
                 alt="Satyajit Mohapatra" 
                 fill
                 className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"

@@ -6,7 +6,6 @@ const repo = 'my_new_webs_18sep';
 const nextConfig: NextConfig = {
   output: "export",
   basePath: isGithubActions ? `/${repo}` : "",
-  assetPrefix: isGithubActions ? `/${repo}/` : "",
   images: {
     unoptimized: true,
   },
