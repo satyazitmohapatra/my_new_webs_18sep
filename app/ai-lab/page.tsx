@@ -141,7 +141,7 @@ export default function AILab() {
                     <div>
                       <span className="text-muted-foreground text-xs block mb-1">SKILLS</span>
                       <div className="flex flex-wrap gap-1">
-                        {["Python", "React", "Docker", "Kubernetes", "AWS"].map(s => (
+                        {["Python", "React", "Docker", "Kubernetes", "Azure"].map(s => (
                           <span key={s} className="bg-foreground text-background px-1.5 py-0.5 text-[10px]">{s}</span>
                         ))}
                       </div>

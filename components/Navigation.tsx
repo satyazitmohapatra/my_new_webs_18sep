@@ -54,7 +54,7 @@ export function Navigation() {
         <div className="flex items-center gap-4">
           <h1 className="text-sm font-bold tracking-tight text-foreground uppercase font-mono">
             {profile.name.split(" ")[0]}
-            <span className="text-navy">.dev</span>
+            <span className="text-accent">.dev</span>
           </h1>
           <div className="hidden md:flex items-center gap-2 text-[9px] font-mono text-muted-foreground uppercase tracking-widest">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -78,7 +78,7 @@ export function Navigation() {
 
           <button
             onClick={toggleTheme}
-            className="w-8 h-8 flex items-center justify-center bg-navy text-white hover:bg-navy/90 transition-all duration-200 shadow-sm"
+            className="w-8 h-8 flex items-center justify-center bg-accent text-accent-fg hover:bg-accent/90 transition-all duration-200 shadow-sm"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}

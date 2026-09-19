@@ -21,7 +21,7 @@ const fadeUp = {
 function SectionLabel({ number, label }: { number: string; label: string }) {
   return (
     <div className="flex items-center gap-3 mb-12">
-      <span className="font-mono text-[10px] tracking-widest text-navy uppercase">{number}</span>
+      <span className="font-mono text-[10px] tracking-widest text-accent uppercase">{number}</span>
       <div className="w-8 h-px bg-foreground/20" />
       <span className="font-mono text-[10px] tracking-widest text-muted-foreground uppercase">{label}</span>
     </div>
@@ -36,7 +36,7 @@ export default function SinglePagePortfolio() {
   const currentProject = projects[currentProjectIdx];
 
   return (
-    <div className="w-full bg-background text-foreground selection:bg-navy selection:text-white flex flex-col transition-colors duration-300">
+    <div className="w-full bg-background text-foreground selection:bg-accent selection:text-accent-fg flex flex-col transition-colors duration-300">
 
       {/* ================================================== */}
       {/* 01 — HERO */}
@@ -52,7 +52,7 @@ export default function SinglePagePortfolio() {
             className="flex flex-col gap-6 z-10 text-center lg:text-left items-center lg:items-start"
           >
             <div className="flex items-center gap-3">
-              <span className="font-mono text-[10px] tracking-widest text-navy uppercase">01 / INTRO</span>
+              <span className="font-mono text-[10px] tracking-widest text-accent uppercase">01 / INTRO</span>
               <div className="w-8 h-px bg-foreground/20" />
             </div>
 
@@ -151,7 +151,7 @@ export default function SinglePagePortfolio() {
                       <span className="font-mono text-[10px] tracking-widest text-muted-foreground uppercase">
                         {currentProject.id.replace("_", " ")}
                       </span>
-                      <span className="font-mono text-[9px] tracking-widest uppercase text-navy border border-navy/30 px-2 py-0.5">
+                      <span className="font-mono text-[9px] tracking-widest uppercase text-accent border border-accent/30 px-2 py-0.5">
                         {currentProject.status}
                       </span>
                     </div>
@@ -185,7 +185,7 @@ export default function SinglePagePortfolio() {
                   {/* Architecture (if exists) */}
                   {currentProject.architecture && (
                     <div className="border-t border-foreground/5 pt-6 mb-6">
-                      <span className="font-mono text-[9px] tracking-widest text-navy uppercase block mb-2">ARCHITECTURE</span>
+                      <span className="font-mono text-[9px] tracking-widest text-accent uppercase block mb-2">ARCHITECTURE</span>
                       <p className="font-mono text-xs text-muted-foreground leading-relaxed">
                         {currentProject.architecture}
                       </p>
@@ -198,14 +198,14 @@ export default function SinglePagePortfolio() {
                       <a
                         href={currentProject.github}
                         target="_blank"
-                        className="flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase text-muted-foreground hover:text-navy transition-colors duration-200"
+                        className="flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase text-muted-foreground hover:text-accent transition-colors duration-200"
                       >
                         GitHub <ExternalLink size={10} />
                       </a>
                     )}
                     <Link
                       href={`/projects/${currentProject.id}`}
-                      className="flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase bg-navy text-white px-4 py-2 hover:bg-navy/90 transition-colors duration-200 shadow-sm"
+                      className="flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase bg-accent text-accent-fg px-4 py-2 hover:bg-accent/90 transition-colors duration-200 shadow-sm"
                     >
                       View Details <ArrowRight size={10} />
                     </Link>
@@ -219,7 +219,7 @@ export default function SinglePagePortfolio() {
               <button
                 onClick={() => setCurrentProjectIdx((p) => Math.max(0, p - 1))}
                 disabled={currentProjectIdx === 0}
-                className="w-10 h-10 flex items-center justify-center bg-navy text-white hover:bg-navy/90 disabled:bg-foreground/5 disabled:text-foreground/20 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
+                className="w-10 h-10 flex items-center justify-center bg-accent text-accent-fg hover:bg-accent/90 disabled:bg-foreground/5 disabled:text-foreground/20 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
                 aria-label="Previous project"
               >
                 <ArrowLeft size={16} />
@@ -230,7 +230,7 @@ export default function SinglePagePortfolio() {
               <button
                 onClick={() => setCurrentProjectIdx((p) => Math.min(projects.length - 1, p + 1))}
                 disabled={currentProjectIdx === projects.length - 1}
-                className="w-10 h-10 flex items-center justify-center bg-navy text-white hover:bg-navy/90 disabled:bg-foreground/5 disabled:text-foreground/20 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
+                className="w-10 h-10 flex items-center justify-center bg-accent text-accent-fg hover:bg-accent/90 disabled:bg-foreground/5 disabled:text-foreground/20 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
                 aria-label="Next project"
               >
                 <ArrowRight size={16} />
@@ -260,14 +260,14 @@ export default function SinglePagePortfolio() {
                   className="w-full flex items-center justify-between py-6 md:py-8 group"
                 >
                   <div className="flex items-center gap-4 text-left">
-                    <span className="font-mono text-[9px] tracking-widest text-navy uppercase hidden md:block shrink-0 w-16">
+                    <span className="font-mono text-[9px] tracking-widest text-accent uppercase hidden md:block shrink-0 w-16">
                       {log.id.replace("_", " ")}
                     </span>
-                    <h3 className="text-lg md:text-xl font-bold tracking-tight text-foreground uppercase group-hover:text-navy/80 transition-colors duration-200">
+                    <h3 className="text-lg md:text-xl font-bold tracking-tight text-foreground uppercase group-hover:text-accent/80 transition-colors duration-200">
                       {log.title}
                     </h3>
                   </div>
-                  <div className={`w-8 h-8 flex items-center justify-center bg-navy text-white shrink-0 transition-transform duration-200 shadow-sm ${expandedLogId === log.id ? "rotate-180" : ""}`}>
+                  <div className={`w-8 h-8 flex items-center justify-center bg-accent text-accent-fg shrink-0 transition-transform duration-200 shadow-sm ${expandedLogId === log.id ? "rotate-180" : ""}`}>
                     <ChevronDown size={14} />
                   </div>
                 </button>
@@ -283,15 +283,15 @@ export default function SinglePagePortfolio() {
                     >
                       <div className="pb-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-sm font-mono text-muted-foreground tracking-wide leading-relaxed">
                         <div>
-                          <span className="text-[10px] tracking-widest text-navy uppercase font-bold mb-2 block">PROBLEM</span>
+                          <span className="text-[10px] tracking-widest text-accent uppercase font-bold mb-2 block">PROBLEM</span>
                           {log.problem}
                         </div>
                         <div>
-                          <span className="text-[10px] tracking-widest text-navy uppercase font-bold mb-2 block">INVESTIGATION</span>
+                          <span className="text-[10px] tracking-widest text-accent uppercase font-bold mb-2 block">INVESTIGATION</span>
                           {log.investigation}
                         </div>
                         <div className="md:col-span-2 border-t border-foreground/5 pt-6">
-                          <span className="text-[10px] tracking-widest text-navy uppercase font-bold mb-2 block">RESOLUTION & LESSON</span>
+                          <span className="text-[10px] tracking-widest text-accent uppercase font-bold mb-2 block">RESOLUTION & LESSON</span>
                           {log.resolution} <br /><br /> {log.lesson}
                         </div>
                       </div>
@@ -327,11 +327,11 @@ export default function SinglePagePortfolio() {
                     <span className="font-mono text-[10px] tracking-widest text-muted-foreground tabular-nums w-6 shrink-0">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="text-base md:text-lg font-bold tracking-tight text-foreground uppercase group-hover:text-navy/80 transition-colors duration-200">
+                    <h3 className="text-base md:text-lg font-bold tracking-tight text-foreground uppercase group-hover:text-accent/80 transition-colors duration-200">
                       {skillGroup.capability}
                     </h3>
                   </div>
-                  <div className={`w-7 h-7 flex items-center justify-center bg-navy text-white shrink-0 transition-transform duration-200 shadow-sm ${expandedSkillIdx === idx ? "rotate-180" : ""}`}>
+                  <div className={`w-7 h-7 flex items-center justify-center bg-accent text-accent-fg shrink-0 transition-transform duration-200 shadow-sm ${expandedSkillIdx === idx ? "rotate-180" : ""}`}>
                     <ChevronDown size={12} />
                   </div>
                 </button>
@@ -431,7 +431,7 @@ export default function SinglePagePortfolio() {
                 key={idx}
                 {...fadeUp}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="group border border-foreground/10 p-6 md:p-8 hover:border-navy/40 transition-colors duration-200"
+                className="group border border-foreground/10 p-6 md:p-8 hover:border-accent/40 transition-colors duration-200"
               >
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <h3 className="text-base md:text-lg font-bold tracking-tight text-foreground">{ach.title}</h3>
@@ -455,7 +455,7 @@ export default function SinglePagePortfolio() {
         >
           {[...Array(8)].map((_, i) => (
             <div key={i} className="flex items-center gap-8 px-8 font-mono text-[10px] tracking-widest text-muted-foreground uppercase">
-              <span className="w-1 h-1 bg-navy rounded-full shrink-0" />
+              <span className="w-1 h-1 bg-accent rounded-full shrink-0" />
               AI / ML ENGINEER
               <span className="w-1 h-1 bg-foreground/20 rounded-full shrink-0" />
               FULL STACK DEVELOPER
@@ -485,19 +485,19 @@ export default function SinglePagePortfolio() {
 
             <a
               href={`mailto:${profile.contact.email}`}
-              className="inline-flex items-center justify-center bg-navy text-white px-8 py-4 font-mono text-xs md:text-sm tracking-widest uppercase hover:bg-navy/90 transition-transform hover:scale-[1.02] shadow-md shadow-navy/10"
+              className="inline-flex items-center justify-center bg-accent text-accent-fg px-8 py-4 font-mono text-xs md:text-sm tracking-widest uppercase hover:bg-accent/90 transition-transform hover:scale-[1.02] shadow-md shadow-accent/10"
             >
               {profile.contact.email}
             </a>
 
             <div className="flex gap-8 mt-12 font-mono text-[10px] tracking-widest text-muted-foreground uppercase">
-              <a href={profile.contact.github} target="_blank" className="flex items-center gap-2 hover:text-navy transition-colors duration-200">
+              <a href={profile.contact.github} target="_blank" className="flex items-center gap-2 hover:text-accent transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
                   <path d="M9 18c-4.51 2-5-2-7-2"></path>
                 </svg> GitHub
               </a>
-              <a href={profile.contact.linkedin} target="_blank" className="flex items-center gap-2 hover:text-navy transition-colors duration-200">
+              <a href={profile.contact.linkedin} target="_blank" className="flex items-center gap-2 hover:text-accent transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                   <rect x="2" y="9" width="4" height="12"></rect>
