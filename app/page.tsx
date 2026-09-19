@@ -151,34 +151,37 @@ export default function SinglePagePortfolio() {
                     {currentProject.description}
                   </p>
 
-                  {/* Thumbnail Image */}
+                  {/* Thumbnail Image Section */}
                   {currentProject.image && (
-                    <div className="relative w-full aspect-[2/1] mb-8 border border-foreground/20 overflow-hidden group rounded-sm">
-                      <Image 
-                        src={currentProject.image} 
-                        alt={currentProject.title} 
-                        fill 
-                        className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]" 
-                      />
-                      
+                    <div className="w-full flex items-center gap-3 md:gap-6 mb-8">
                       {/* Left/Prev Arrow */}
                       <button
                         onClick={() => setCurrentProjectIdx((p) => Math.max(0, p - 1))}
                         disabled={currentProjectIdx === 0}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-background/80 backdrop-blur-md border border-foreground/10 text-foreground hover:bg-accent hover:text-accent-fg disabled:opacity-0 transition-all duration-300 rounded-full shadow-lg z-10"
+                        className="shrink-0 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-background border border-foreground/10 text-muted-foreground hover:text-accent-fg hover:bg-accent hover:border-accent disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200 rounded-full shadow-sm"
                         aria-label="Previous project"
                       >
-                        <ArrowLeft size={18} />
+                        <ArrowLeft size={16} />
                       </button>
+
+                      {/* Thumbnail Image */}
+                      <div className="relative flex-1 aspect-[2/1] border border-foreground/20 overflow-hidden group rounded-sm shadow-sm">
+                        <Image 
+                          src={currentProject.image} 
+                          alt={currentProject.title} 
+                          fill 
+                          className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]" 
+                        />
+                      </div>
 
                       {/* Right/Next Arrow */}
                       <button
                         onClick={() => setCurrentProjectIdx((p) => Math.min(projects.length - 1, p + 1))}
                         disabled={currentProjectIdx === projects.length - 1}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-background/80 backdrop-blur-md border border-foreground/10 text-foreground hover:bg-accent hover:text-accent-fg disabled:opacity-0 transition-all duration-300 rounded-full shadow-lg z-10"
+                        className="shrink-0 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-background border border-foreground/10 text-muted-foreground hover:text-accent-fg hover:bg-accent hover:border-accent disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200 rounded-full shadow-sm"
                         aria-label="Next project"
                       >
-                        <ArrowRight size={18} />
+                        <ArrowRight size={16} />
                       </button>
                     </div>
                   )}
