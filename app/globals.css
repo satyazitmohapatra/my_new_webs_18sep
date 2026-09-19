@@ -6,6 +6,7 @@
   --muted: #111111;
   --muted-foreground: #888888;
   --border: #222222;
+  --navy: #152642; /* Deep Navy Blue from Coat */
 }
 
 .light {
@@ -14,6 +15,7 @@
   --muted: #f4f4f5;
   --muted-foreground: #525252;
   --border: #e5e5e5;
+  --navy: #1C3359; /* Slightly brighter for light mode contrast if needed, or keep same */
 }
 
 body {
@@ -28,6 +30,7 @@ body {
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-navy: var(--navy);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

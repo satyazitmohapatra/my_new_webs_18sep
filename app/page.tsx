@@ -129,7 +129,7 @@ export default function SinglePagePortfolio() {
               <button 
                 onClick={() => setCurrentProjectIdx(p => Math.max(0, p - 1))}
                 disabled={currentProjectIdx === 0}
-                className="w-10 h-10 md:w-14 md:h-14 bg-background/90 backdrop-blur-sm border border-foreground/20 rounded-none flex items-center justify-center text-foreground hover:bg-foreground hover:text-background disabled:opacity-20 disabled:cursor-not-allowed transition-colors shadow-xl"
+                className="w-10 h-10 md:w-14 md:h-14 bg-navy rounded-none flex items-center justify-center text-white hover:bg-navy/90 disabled:bg-foreground/5 disabled:text-foreground/20 disabled:cursor-not-allowed transition-all shadow-2xl hover:scale-105 active:scale-95"
               >
                 <ArrowLeft size={20} />
               </button>
@@ -139,7 +139,7 @@ export default function SinglePagePortfolio() {
               <button 
                 onClick={() => setCurrentProjectIdx(p => Math.min(projects.length - 1, p + 1))}
                 disabled={currentProjectIdx === projects.length - 1}
-                className="w-10 h-10 md:w-14 md:h-14 bg-background/90 backdrop-blur-sm border border-foreground/20 rounded-none flex items-center justify-center text-foreground hover:bg-foreground hover:text-background disabled:opacity-20 disabled:cursor-not-allowed transition-colors shadow-xl"
+                className="w-10 h-10 md:w-14 md:h-14 bg-navy rounded-none flex items-center justify-center text-white hover:bg-navy/90 disabled:bg-foreground/5 disabled:text-foreground/20 disabled:cursor-not-allowed transition-all shadow-2xl hover:scale-105 active:scale-95"
               >
                 <ArrowRight size={20} />
               </button>
@@ -174,10 +174,10 @@ export default function SinglePagePortfolio() {
                   onClick={() => setExpandedLogId(expandedLogId === log.id ? null : log.id)}
                   className="w-full flex items-center justify-between group"
                 >
-                  <h3 className="text-xl md:text-3xl font-bold tracking-tighter text-foreground text-left group-hover:text-muted-foreground transition-colors uppercase max-w-3xl pr-4">
+                  <h3 className="text-xl md:text-3xl font-bold tracking-tighter text-foreground text-left group-hover:text-navy transition-colors uppercase max-w-3xl pr-4">
                     {log.title}
                   </h3>
-                  <div className="text-foreground shrink-0">
+                  <div className="text-foreground shrink-0 group-hover:text-navy transition-colors">
                     {expandedLogId === log.id ? <Minus size={24} /> : <Plus size={24} />}
                   </div>
                 </button>
@@ -239,10 +239,10 @@ export default function SinglePagePortfolio() {
                   onClick={() => setExpandedSkillIdx(expandedSkillIdx === idx ? null : idx)}
                   className="flex items-center justify-between w-full text-left group hover:px-2 transition-all duration-300"
                 >
-                  <h3 className="text-lg md:text-2xl font-bold tracking-tighter text-foreground uppercase group-hover:text-muted-foreground transition-colors">
+                  <h3 className="text-lg md:text-2xl font-bold tracking-tighter text-foreground uppercase group-hover:text-navy transition-colors">
                     {skillGroup.capability}
                   </h3>
-                  <div className={`text-foreground transition-transform duration-300 ${expandedSkillIdx === idx ? 'rotate-180' : ''}`}>
+                  <div className={`text-foreground group-hover:text-navy transition-all duration-300 ${expandedSkillIdx === idx ? 'rotate-180 text-navy' : ''}`}>
                     <ChevronDown size={16} />
                   </div>
                 </button>
