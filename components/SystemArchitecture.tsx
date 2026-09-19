@@ -55,20 +55,20 @@ export function SystemArchitecture() {
 
   const NodeCard = ({ n }: { n: typeof nodes[0] }) => (
     <div
-      className={`w-full h-full border ${isActive(n.id) ? 'border-[#0B1F3A] bg-[#0A0A0A]' : 'border-foreground/10 bg-[#050505]'} p-4 flex flex-col transition-all duration-500 cursor-default shadow-sm hover:shadow-md`}
+      className={`w-full h-full border ${isActive(n.id) ? 'border-accent bg-muted/50' : 'border-border bg-background'} p-4 flex flex-col transition-all duration-500 cursor-default shadow-sm hover:shadow-md`}
       onMouseEnter={() => setHovered(n.id)}
       onMouseLeave={() => setHovered(null)}
     >
       <div className="flex justify-between items-start mb-4">
         <span className="font-mono text-[9px] text-muted-foreground">{n.num}</span>
-        <div className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${isActive(n.id) ? 'bg-[#0B1F3A]' : 'bg-foreground/20'}`} />
+        <div className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${isActive(n.id) ? 'bg-accent' : 'bg-foreground/20'}`} />
       </div>
       <div className="flex-grow">
         <h3 className="font-mono text-xs md:text-[11px] lg:text-xs font-bold text-foreground uppercase tracking-widest">{n.title}</h3>
       </div>
       <div className={`mt-auto flex flex-wrap gap-1 transition-opacity duration-300 ${isActive(n.id) ? 'opacity-100' : 'opacity-0'}`}>
         {n.tech.map(t => (
-          <span key={t} className="font-mono text-[8px] text-muted-foreground border border-foreground/10 px-1 py-0.5 uppercase whitespace-nowrap bg-background">
+          <span key={t} className="font-mono text-[8px] text-muted-foreground border border-border px-1 py-0.5 uppercase whitespace-nowrap bg-background">
             {t}
           </span>
         ))}
@@ -77,13 +77,13 @@ export function SystemArchitecture() {
   );
 
   return (
-    <div className="w-full relative bg-[#050505] overflow-hidden py-12 md:py-24 border-t border-foreground/5 font-sans">
+    <div className="w-full relative bg-background overflow-hidden py-12 md:py-24 font-sans">
       
       {/* Background Grid Pattern */}
       <svg className="absolute inset-0 w-full h-full opacity-30 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="sys-grid" width="32" height="32" patternUnits="userSpaceOnUse">
-            <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#1F1F1F" strokeWidth="0.5" />
+            <path d="M 32 0 L 0 0 0 32" fill="none" stroke="currentColor" className="text-border" strokeWidth="0.5" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#sys-grid)" />
@@ -98,14 +98,14 @@ export function SystemArchitecture() {
               <path 
                 d={n.path} 
                 fill="none" 
-                stroke={isActive(n.id) ? "#0B1F3A" : "#1F1F1F"} 
+                stroke="currentColor"
                 strokeWidth="1.5" 
                 strokeLinecap="square" 
                 strokeLinejoin="miter" 
-                className="transition-colors duration-700" 
+                className={`transition-colors duration-700 ${isActive(n.id) ? 'text-accent' : 'text-border'}`} 
               />
               {/* Animated particle */}
-              <circle r="2" fill="#0B1F3A" className={`transition-opacity duration-700 ${isActive(n.id) ? 'opacity-100' : 'opacity-30'} hidden sm:block`}>
+              <circle r="2" fill="currentColor" className={`transition-opacity duration-700 text-accent ${isActive(n.id) ? 'opacity-100' : 'opacity-30'} hidden sm:block`}>
                 <animateMotion dur="3s" repeatCount="indefinite" path={n.animPath} begin={n.delay} calcMode="linear" />
               </circle>
             </g>
@@ -135,8 +135,8 @@ export function SystemArchitecture() {
           onMouseEnter={() => setHovered('core')}
           onMouseLeave={() => setHovered(null)}
         >
-          <div className={`w-full h-full border ${hovered === 'core' ? 'border-[#0B1F3A] bg-[#0A0A0A] shadow-[0_0_20px_rgba(11,31,58,0.15)]' : 'border-foreground/20 bg-[#050505]'} flex flex-col items-center justify-center transition-all duration-700 cursor-default`}>
-            <div className={`w-2 h-2 rounded-sm mb-3 transition-colors duration-700 ${hovered === 'core' ? 'bg-[#0B1F3A] shadow-[0_0_8px_#0B1F3A]' : 'bg-foreground/20'}`} />
+          <div className={`w-full h-full border ${hovered === 'core' ? 'border-accent bg-muted/50' : 'border-border bg-background'} flex flex-col items-center justify-center transition-all duration-700 cursor-default shadow-sm`}>
+            <div className={`w-2 h-2 rounded-sm mb-3 transition-colors duration-700 ${hovered === 'core' ? 'bg-accent' : 'bg-foreground/20'}`} />
             <span className="font-mono text-[10px] lg:text-xs font-bold tracking-[0.2em] text-foreground">SYSTEM CORE</span>
             <span className="font-mono text-[7px] lg:text-[8px] tracking-widest text-muted-foreground mt-1.5 uppercase">ENGINEERING ENGINE</span>
           </div>
@@ -146,28 +146,28 @@ export function SystemArchitecture() {
       {/* MOBILE LAYOUT (Flex Column) */}
       <div className="flex md:hidden flex-col items-center gap-2 px-6 relative z-10 w-full max-w-sm mx-auto">
         <div className="w-full h-24"><NodeCard n={nodes[0]} /></div>
-        <div className="w-px h-6 bg-foreground/10" />
+        <div className="w-px h-6 bg-border" />
         <div className="w-full h-24"><NodeCard n={nodes[1]} /></div>
-        <div className="w-px h-6 bg-foreground/10" />
+        <div className="w-px h-6 bg-border" />
         
         {/* Core Mobile */}
         <div 
-          className="w-full h-32 border border-[#0B1F3A] bg-[#0A0A0A] flex flex-col items-center justify-center shadow-[0_0_15px_rgba(11,31,58,0.1)]"
+          className="w-full h-32 border border-accent bg-muted/50 flex flex-col items-center justify-center shadow-sm"
           onTouchStart={() => setHovered('core')}
           onTouchEnd={() => setHovered(null)}
         >
-          <div className="w-2 h-2 rounded-sm mb-3 bg-[#0B1F3A] shadow-[0_0_8px_#0B1F3A]" />
+          <div className="w-2 h-2 rounded-sm mb-3 bg-accent" />
           <span className="font-mono text-sm font-bold tracking-[0.2em] text-foreground">SYSTEM CORE</span>
           <span className="font-mono text-[9px] tracking-widest text-muted-foreground mt-2 uppercase">ENGINEERING ENGINE</span>
         </div>
 
-        <div className="w-px h-6 bg-[#0B1F3A]/50" />
+        <div className="w-px h-6 bg-accent/50" />
         <div className="w-full h-24"><NodeCard n={nodes[3]} /></div>
-        <div className="w-px h-6 bg-foreground/10" />
+        <div className="w-px h-6 bg-border" />
         <div className="w-full h-24"><NodeCard n={nodes[4]} /></div>
-        <div className="w-px h-6 bg-foreground/10" />
+        <div className="w-px h-6 bg-border" />
         <div className="w-full h-24"><NodeCard n={nodes[5]} /></div>
-        <div className="w-px h-6 bg-foreground/10" />
+        <div className="w-px h-6 bg-border" />
         <div className="w-full h-24"><NodeCard n={nodes[2]} /></div>
       </div>
 
