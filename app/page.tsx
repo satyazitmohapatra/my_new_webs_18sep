@@ -8,7 +8,7 @@ import { projects } from "@/data/projects";
 import { battleLogs } from "@/data/battleLog";
 import { skills } from "@/data/skills";
 import { useState } from "react";
-import { ArrowRight, ArrowLeft, ChevronDown, ExternalLink } from "lucide-react";
+import { ArrowRight, ArrowLeft, ChevronDown, ExternalLink, Github, Linkedin } from "lucide-react";
 import profileImage from "@/public/satyajit_profile.jpg";
 
 const fadeUp = {
@@ -422,10 +422,10 @@ export default function SinglePagePortfolio() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              { title: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services (Dummy)", date: "2025" },
-              { title: "Kaggle Expert Data Scientist", issuer: "Kaggle (Dummy)", date: "2024" },
-              { title: "Hackathon Winner - Smart India", issuer: "SIH (Dummy)", date: "2023" },
-              { title: "Machine Learning Specialization", issuer: "Stanford Online (Dummy)", date: "2023" },
+              { title: "Microsoft Azure A-900", issuer: "Microsoft", date: "2025" },
+              { title: "Kaggle Source Contributor", issuer: "Kaggle", date: "2026" },
+              { title: "Technova Hackathon 3.0 2nd RunnersUp", issuer: "Technova by ESSPL", date: "2026" },
+              { title: "CODESOFT Data Science Internship", issuer: "CODESOFT", date: "2026" },
             ].map((ach, idx) => (
               <motion.div
                 key={idx}
@@ -491,11 +491,11 @@ export default function SinglePagePortfolio() {
             </a>
 
             <div className="flex gap-8 mt-12 font-mono text-[10px] tracking-widest text-muted-foreground uppercase">
-              <a href={profile.contact.github} target="_blank" className="hover:text-navy transition-colors duration-200">
-                GitHub
+              <a href={profile.contact.github} target="_blank" className="flex items-center gap-2 hover:text-navy transition-colors duration-200">
+                <Github size={14} /> GitHub
               </a>
-              <a href={profile.contact.linkedin} target="_blank" className="hover:text-navy transition-colors duration-200">
-                LinkedIn
+              <a href={profile.contact.linkedin} target="_blank" className="flex items-center gap-2 hover:text-navy transition-colors duration-200">
+                <Linkedin size={14} /> LinkedIn
               </a>
             </div>
           </motion.div>
