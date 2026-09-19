@@ -174,11 +174,11 @@ export default function SinglePagePortfolio() {
                   onClick={() => setExpandedLogId(expandedLogId === log.id ? null : log.id)}
                   className="w-full flex items-center justify-between group"
                 >
-                  <h3 className="text-xl md:text-3xl font-bold tracking-tighter text-foreground text-left group-hover:text-navy transition-colors uppercase max-w-3xl pr-4">
+                  <h3 className="text-xl md:text-3xl font-bold tracking-tighter text-foreground text-left transition-colors uppercase max-w-3xl pr-4 group-hover:opacity-80">
                     {log.title}
                   </h3>
-                  <div className="text-foreground shrink-0 group-hover:text-navy transition-colors">
-                    {expandedLogId === log.id ? <Minus size={24} /> : <Plus size={24} />}
+                  <div className="w-10 h-10 bg-navy text-white flex items-center justify-center shrink-0 transition-transform group-hover:scale-105 shadow-md">
+                    {expandedLogId === log.id ? <Minus size={20} /> : <Plus size={20} />}
                   </div>
                 </button>
                 
@@ -239,10 +239,10 @@ export default function SinglePagePortfolio() {
                   onClick={() => setExpandedSkillIdx(expandedSkillIdx === idx ? null : idx)}
                   className="flex items-center justify-between w-full text-left group hover:px-2 transition-all duration-300"
                 >
-                  <h3 className="text-lg md:text-2xl font-bold tracking-tighter text-foreground uppercase group-hover:text-navy transition-colors">
+                  <h3 className="text-lg md:text-2xl font-bold tracking-tighter text-foreground uppercase transition-colors group-hover:opacity-80">
                     {skillGroup.capability}
                   </h3>
-                  <div className={`text-foreground group-hover:text-navy transition-all duration-300 ${expandedSkillIdx === idx ? 'rotate-180 text-navy' : ''}`}>
+                  <div className={`w-8 h-8 bg-navy text-white flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-105 shadow-md ${expandedSkillIdx === idx ? 'rotate-180' : ''}`}>
                     <ChevronDown size={16} />
                   </div>
                 </button>
@@ -430,7 +430,7 @@ export default function SinglePagePortfolio() {
           <p className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-muted-foreground max-w-sm leading-relaxed mb-12">
             LET'S COLLABORATE ON YOUR NEXT BIG PROJECT.
           </p>
-          <a href={`mailto:${profile.contact.email}`} className="text-foreground hover:text-muted-foreground font-mono text-sm tracking-widest border-b border-foreground hover:border-muted-foreground pb-1 transition-colors">
+          <a href={`mailto:${profile.contact.email}`} className="bg-navy text-white hover:bg-navy/90 px-8 py-4 font-mono text-sm tracking-widest transition-transform hover:scale-105 shadow-xl shadow-navy/20">
             {profile.contact.email}
           </a>
           

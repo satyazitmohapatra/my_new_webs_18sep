@@ -43,7 +43,7 @@ export function Navigation() {
           
           <button 
             onClick={toggleTheme}
-            className="text-foreground border border-foreground/20 bg-background/50 backdrop-blur-sm hover:bg-navy hover:text-white hover:border-navy transition-all duration-300 flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest px-4 py-2 shadow-sm"
+            className="bg-navy text-white hover:bg-navy/90 transition-all duration-300 flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest px-4 py-2 shadow-sm rounded-none"
           >
             {theme === 'dark' ? (
               <><Sun size={14} /> Bright</>
