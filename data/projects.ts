@@ -1,3 +1,10 @@
+import foodDeliveryImg from "@/public/projects/food_delivery.png";
+import heartDiseaseImg from "@/public/projects/heart_disease.png";
+import citizenGrievanceImg from "@/public/projects/citizen_grievance.png";
+import laptopPriceImg from "@/public/projects/laptop_price.png";
+import bangaloreRealEstateImg from "@/public/projects/bangalore_real_estate.png";
+import olympicDataImg from "@/public/projects/olympic_data.png";
+
 export type Project = {
   id: string;
   title: string;
@@ -12,13 +19,13 @@ export type Project = {
   deployment?: string;
   github?: string;
   demo?: string;
-  image?: string;
+  image?: any;
 };
 
 export const projects: Project[] = [
   {
     id: "PROJECT_001",
-    image: "/projects/food_delivery.png",
+    image: foodDeliveryImg,
     title: "FOOD DELIVERY PLATFORM",
     description: "Full-stack food delivery application with secure management and automated deployment.",
     status: "DEPLOYED",
@@ -31,7 +38,7 @@ export const projects: Project[] = [
   },
   {
     id: "PROJECT_002",
-    image: "/projects/heart_disease.png",
+    image: heartDiseaseImg,
     title: "HEART DISEASE PREDICTOR",
     description: "Centralized web application hosting multiple ML models for disease prediction.",
     status: "DEPLOYED",
@@ -43,7 +50,7 @@ export const projects: Project[] = [
   },
   {
     id: "PROJECT_003",
-    image: "/projects/citizen_grievance.png",
+    image: citizenGrievanceImg,
     title: "CITYZEN - CIVIC GRAVIENCE APP",
     description: "Crowd-sourced civic issue reporting and tracking platform.",
     status: "DEPLOYED",
@@ -55,7 +62,7 @@ export const projects: Project[] = [
   },
   {
     id: "PROJECT_004",
-    image: "/projects/laptop_price.png",
+    image: laptopPriceImg,
     title: "LAPTOP PRICE PREDICTOR",
     description: "Predictive ML model to estimate laptop prices based on hardware configurations.",
     status: "DEPLOYED",
@@ -67,7 +74,7 @@ export const projects: Project[] = [
   },
   {
     id: "PROJECT_005",
-    image: "/projects/bangalore_real_estate.png",
+    image: bangaloreRealEstateImg,
     title: "BANGALORE HOUSE PRICE PREDICTOR",
     description: "Regression-based model integrated with a user-friendly frontend for real-time property estimates.",
     status: "DEPLOYED",
@@ -79,7 +86,7 @@ export const projects: Project[] = [
   },
   {
     id: "PROJECT_006",
-    image: "/projects/olympic_data.png",
+    image: olympicDataImg,
     title: "OLYMPIC DATA ANALYSIS",
     description: "Interactive data visualization of 120 years of Olympic athlete performance.",
     status: "DEPLOYED",
