@@ -22,6 +22,6 @@ export const profile = {
   contact: {
     email: "mohapatrasatyajit2006@gmail.com",
     github: "https://github.com/satyazitmohapatra",
-    linkedin: "https://www.linkedin.com/in/satyajit-mohapatra"
+    linkedin: "https://www.linkedin.com/in/satyajit-mohapatra-48838a343"
   }
 };

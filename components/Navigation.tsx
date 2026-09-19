@@ -7,6 +7,7 @@ import { Sun, Moon } from "lucide-react";
 
 export function Navigation() {
   const [theme, setTheme] = useState("dark");
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme") || "dark";
@@ -14,6 +15,10 @@ export function Navigation() {
     if (currentTheme === "light") {
       document.documentElement.classList.add("light");
     }
+
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleTheme = () => {
@@ -27,29 +32,56 @@ export function Navigation() {
     localStorage.setItem("theme", newTheme);
   };
 
+  const navLinks = [
+    { href: "#home", label: "Home" },
+    { href: "#projects", label: "Work" },
+    { href: "#battle-logs", label: "Logs" },
+    { href: "#skills", label: "Stack" },
+    { href: "#education", label: "Education" },
+    { href: "#contact", label: "Contact" },
+  ];
+
   return (
-    <header className="absolute top-0 left-0 w-full p-4 md:p-8 z-50 flex flex-col items-center justify-center">
-      <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0 max-w-7xl mx-auto">
-        <h1 className="text-xl md:text-2xl font-bold tracking-tighter text-foreground uppercase">
-          {profile.name}
-        </h1>
-        
-        <div className="flex items-center gap-6 md:gap-12">
-          <nav className="flex items-center gap-4 text-[10px] md:text-xs font-mono text-muted-foreground uppercase tracking-widest">
-            <Link href="#home" className="hover:text-foreground transition-colors">Home</Link>
-            <div className="w-1.5 h-1.5 bg-muted-foreground" />
-            <Link href="#projects" className="hover:text-foreground transition-colors">Projects</Link>
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-background/80 backdrop-blur-md border-b border-foreground/5"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="w-full flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 py-4">
+        {/* Brand */}
+        <div className="flex items-center gap-4">
+          <h1 className="text-sm font-bold tracking-tight text-foreground uppercase font-mono">
+            {profile.name.split(" ")[0]}
+            <span className="text-navy">.dev</span>
+          </h1>
+          <div className="hidden md:flex items-center gap-2 text-[9px] font-mono text-muted-foreground uppercase tracking-widest">
+            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            SYS.ONLINE
+          </div>
+        </div>
+
+        {/* Nav Links + Toggle */}
+        <div className="flex items-center gap-1 md:gap-6">
+          <nav className="hidden md:flex items-center gap-6 text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="hover:text-foreground transition-colors duration-200"
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
-          
-          <button 
+
+          <button
             onClick={toggleTheme}
-            className="bg-navy text-white hover:bg-navy/90 transition-all duration-300 flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest px-4 py-2 shadow-sm rounded-none"
+            className="w-8 h-8 flex items-center justify-center text-muted-foreground hover:text-foreground border border-foreground/10 hover:border-foreground/30 transition-all duration-200"
+            aria-label="Toggle theme"
           >
-            {theme === 'dark' ? (
-              <><Sun size={14} /> Bright</>
-            ) : (
-              <><Moon size={14} /> Dark</>
-            )}
+            {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
           </button>
         </div>
       </div>

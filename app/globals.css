@@ -1,27 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
-  --muted: #111111;
-  --muted-foreground: #888888;
-  --border: #222222;
-  --navy: #152642; /* Deep Navy Blue from Coat */
+  --background: #0A0A0A;
+  --foreground: #FAFAFA;
+  --muted: #1A1A1A;
+  --muted-foreground: #6B7280;
+  --border: #1F1F1F;
+  --navy: #0B1F3A;
+  --gray-dim: #141414;
 }
 
 .light {
-  --background: #ffffff;
-  --foreground: #000000;
-  --muted: #f4f4f5;
+  --background: #FFFFFF;
+  --foreground: #0A0A0A;
+  --muted: #F4F4F5;
   --muted-foreground: #525252;
-  --border: #e5e5e5;
-  --navy: #1C3359; /* Slightly brighter for light mode contrast if needed, or keep same */
+  --border: #E5E7EB;
+  --navy: #102A43;
+  --gray-dim: #F9FAFB;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @theme inline {
@@ -31,44 +36,44 @@ body {
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-navy: var(--navy);
+  --color-gray-dim: var(--gray-dim);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 ::selection {
-  background: #f4f4f5;
-  color: #050505;
+  background: var(--navy);
+  color: #FFFFFF;
 }
 
-/* Custom Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #050505;
-  border-left: 1px solid var(--border);
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #3f3f46;
+  background: var(--border);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #52525b;
+  background: var(--muted-foreground);
 }
 
-/* Hide scrollbar for the horizontal slider */
+/* Utility */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
