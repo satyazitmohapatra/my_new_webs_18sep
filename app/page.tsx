@@ -153,19 +153,20 @@ export default function SinglePagePortfolio() {
 
                   {/* Thumbnail Image Section */}
                   {currentProject.image && (
-                    <div className="w-full flex items-center gap-3 md:gap-6 mb-8">
-                      {/* Left/Prev Arrow */}
+                    <div className="w-full flex flex-col md:flex-row items-center gap-4 md:gap-6 mb-8">
+                      
+                      {/* Desktop Left/Prev Arrow */}
                       <button
                         onClick={() => setCurrentProjectIdx((p) => Math.max(0, p - 1))}
                         disabled={currentProjectIdx === 0}
-                        className="shrink-0 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-background border border-foreground/10 text-muted-foreground hover:text-accent-fg hover:bg-accent hover:border-accent disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200 rounded-full shadow-sm"
+                        className="hidden md:flex shrink-0 w-10 h-10 items-center justify-center bg-background border border-foreground/10 text-muted-foreground hover:text-accent-fg hover:bg-accent hover:border-accent disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200 rounded-full shadow-sm"
                         aria-label="Previous project"
                       >
                         <ArrowLeft size={16} />
                       </button>
 
                       {/* Thumbnail Image */}
-                      <div className="relative flex-1 aspect-[2/1] border border-foreground/20 overflow-hidden group rounded-sm shadow-sm">
+                      <div className="relative w-full md:flex-1 aspect-[2/1] border border-foreground/20 overflow-hidden group rounded-sm shadow-sm">
                         <Image 
                           src={currentProject.image} 
                           alt={currentProject.title} 
@@ -174,15 +175,36 @@ export default function SinglePagePortfolio() {
                         />
                       </div>
 
-                      {/* Right/Next Arrow */}
+                      {/* Desktop Right/Next Arrow */}
                       <button
                         onClick={() => setCurrentProjectIdx((p) => Math.min(projects.length - 1, p + 1))}
                         disabled={currentProjectIdx === projects.length - 1}
-                        className="shrink-0 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-background border border-foreground/10 text-muted-foreground hover:text-accent-fg hover:bg-accent hover:border-accent disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200 rounded-full shadow-sm"
+                        className="hidden md:flex shrink-0 w-10 h-10 items-center justify-center bg-background border border-foreground/10 text-muted-foreground hover:text-accent-fg hover:bg-accent hover:border-accent disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200 rounded-full shadow-sm"
                         aria-label="Next project"
                       >
                         <ArrowRight size={16} />
                       </button>
+
+                      {/* Mobile Arrows (Bottom) */}
+                      <div className="flex md:hidden items-center justify-center gap-6 w-full mt-2">
+                        <button
+                          onClick={() => setCurrentProjectIdx((p) => Math.max(0, p - 1))}
+                          disabled={currentProjectIdx === 0}
+                          className="shrink-0 w-10 h-10 flex items-center justify-center bg-background border border-foreground/10 text-muted-foreground hover:text-accent-fg hover:bg-accent hover:border-accent disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200 rounded-full shadow-sm"
+                          aria-label="Previous project"
+                        >
+                          <ArrowLeft size={16} />
+                        </button>
+                        
+                        <button
+                          onClick={() => setCurrentProjectIdx((p) => Math.min(projects.length - 1, p + 1))}
+                          disabled={currentProjectIdx === projects.length - 1}
+                          className="shrink-0 w-10 h-10 flex items-center justify-center bg-background border border-foreground/10 text-muted-foreground hover:text-accent-fg hover:bg-accent hover:border-accent disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200 rounded-full shadow-sm"
+                          aria-label="Next project"
+                        >
+                          <ArrowRight size={16} />
+                        </button>
+                      </div>
                     </div>
                   )}
 
