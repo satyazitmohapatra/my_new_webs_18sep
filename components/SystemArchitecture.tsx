@@ -55,7 +55,7 @@ export function SystemArchitecture() {
 
   const NodeCard = ({ n }: { n: typeof nodes[0] }) => (
     <div
-      className={`w-full h-full border ${isActive(n.id) ? 'border-accent bg-muted/50' : 'border-border bg-background'} p-4 flex flex-col transition-all duration-500 cursor-default shadow-sm hover:shadow-md`}
+      className={`w-full h-full border-2 ${isActive(n.id) ? 'border-accent bg-muted/50' : 'border-foreground/20 bg-background'} p-4 flex flex-col transition-all duration-500 cursor-default shadow-sm hover:shadow-md`}
       onMouseEnter={() => setHovered(n.id)}
       onMouseLeave={() => setHovered(null)}
     >
@@ -80,10 +80,10 @@ export function SystemArchitecture() {
     <div className="w-full relative bg-background overflow-hidden py-12 md:py-24 font-sans">
       
       {/* Background Grid Pattern */}
-      <svg className="absolute inset-0 w-full h-full opacity-30 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+      <svg className="absolute inset-0 w-full h-full opacity-50 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="sys-grid" width="32" height="32" patternUnits="userSpaceOnUse">
-            <path d="M 32 0 L 0 0 0 32" fill="none" stroke="currentColor" className="text-border" strokeWidth="0.5" />
+            <path d="M 32 0 L 0 0 0 32" fill="none" stroke="currentColor" className="text-foreground/10" strokeWidth="1" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#sys-grid)" />
@@ -99,10 +99,10 @@ export function SystemArchitecture() {
                 d={n.path} 
                 fill="none" 
                 stroke="currentColor"
-                strokeWidth="1.5" 
+                strokeWidth="2" 
                 strokeLinecap="square" 
                 strokeLinejoin="miter" 
-                className={`transition-colors duration-700 ${isActive(n.id) ? 'text-accent' : 'text-border'}`} 
+                className={`transition-colors duration-700 ${isActive(n.id) ? 'text-accent' : 'text-foreground/20'}`} 
               />
               {/* Animated particle */}
               <circle r="2" fill="currentColor" className={`transition-opacity duration-700 text-accent ${isActive(n.id) ? 'opacity-100' : 'opacity-30'} hidden sm:block`}>
@@ -135,7 +135,7 @@ export function SystemArchitecture() {
           onMouseEnter={() => setHovered('core')}
           onMouseLeave={() => setHovered(null)}
         >
-          <div className={`w-full h-full border ${hovered === 'core' ? 'border-accent bg-muted/50' : 'border-border bg-background'} flex flex-col items-center justify-center transition-all duration-700 cursor-default shadow-sm`}>
+          <div className={`w-full h-full border-2 ${hovered === 'core' ? 'border-accent bg-muted/50' : 'border-foreground/20 bg-background'} flex flex-col items-center justify-center transition-all duration-700 cursor-default shadow-md`}>
             <div className={`w-2 h-2 rounded-sm mb-3 transition-colors duration-700 ${hovered === 'core' ? 'bg-accent' : 'bg-foreground/20'}`} />
             <span className="font-mono text-[10px] lg:text-xs font-bold tracking-[0.2em] text-foreground">SYSTEM CORE</span>
             <span className="font-mono text-[7px] lg:text-[8px] tracking-widest text-muted-foreground mt-1.5 uppercase">ENGINEERING ENGINE</span>
@@ -146,13 +146,13 @@ export function SystemArchitecture() {
       {/* MOBILE LAYOUT (Flex Column) */}
       <div className="flex md:hidden flex-col items-center gap-2 px-6 relative z-10 w-full max-w-sm mx-auto">
         <div className="w-full h-24"><NodeCard n={nodes[0]} /></div>
-        <div className="w-px h-6 bg-border" />
+        <div className="w-px h-6 bg-foreground/20 w-[2px]" />
         <div className="w-full h-24"><NodeCard n={nodes[1]} /></div>
-        <div className="w-px h-6 bg-border" />
+        <div className="w-px h-6 bg-foreground/20 w-[2px]" />
         
         {/* Core Mobile */}
         <div 
-          className="w-full h-32 border border-accent bg-muted/50 flex flex-col items-center justify-center shadow-sm"
+          className="w-full h-32 border-2 border-accent bg-muted/50 flex flex-col items-center justify-center shadow-md"
           onTouchStart={() => setHovered('core')}
           onTouchEnd={() => setHovered(null)}
         >
@@ -163,11 +163,11 @@ export function SystemArchitecture() {
 
         <div className="w-px h-6 bg-accent/50" />
         <div className="w-full h-24"><NodeCard n={nodes[3]} /></div>
-        <div className="w-px h-6 bg-border" />
+        <div className="w-px h-6 bg-foreground/20 w-[2px]" />
         <div className="w-full h-24"><NodeCard n={nodes[4]} /></div>
-        <div className="w-px h-6 bg-border" />
+        <div className="w-px h-6 bg-foreground/20 w-[2px]" />
         <div className="w-full h-24"><NodeCard n={nodes[5]} /></div>
-        <div className="w-px h-6 bg-border" />
+        <div className="w-px h-6 bg-foreground/20 w-[2px]" />
         <div className="w-full h-24"><NodeCard n={nodes[2]} /></div>
       </div>
 
