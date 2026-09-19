@@ -153,7 +153,7 @@ export default function SinglePagePortfolio() {
 
                   {/* Thumbnail Image */}
                   {currentProject.image && (
-                    <div className="relative w-full aspect-[3/1] mb-8 border border-foreground/10 overflow-hidden group">
+                    <div className="relative w-full aspect-[2/1] mb-8 border border-foreground/10 overflow-hidden group">
                       <Image 
                         src={currentProject.image} 
                         alt={currentProject.title} 
