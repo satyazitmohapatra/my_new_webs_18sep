@@ -19,7 +19,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
     <div className="p-6 md:p-12 max-w-4xl mx-auto space-y-12 pb-24">
       {/* Navigation */}
       <Link 
-        href="/projects" 
+        href="/" 
         className="inline-flex items-center gap-2 font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
       >
         <ArrowLeft size={14} /> BACK TO UNIVERSE

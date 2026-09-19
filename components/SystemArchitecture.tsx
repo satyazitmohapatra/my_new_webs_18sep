@@ -138,7 +138,7 @@ export function SystemArchitecture() {
           <div className={`w-full h-full border-2 ${hovered === 'core' ? 'border-accent bg-muted/50' : 'border-foreground/20 bg-background'} flex flex-col items-center justify-center transition-all duration-700 cursor-default shadow-md`}>
             <div className={`w-2 h-2 rounded-sm mb-3 transition-colors duration-700 ${hovered === 'core' ? 'bg-accent' : 'bg-foreground/20'}`} />
             <span className="font-mono text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs font-bold tracking-[0.2em] text-foreground">SYSTEM CORE</span>
-            <span className="font-mono text-[5px] sm:text-[6px] md:text-[7px] lg:text-[8px] tracking-widest text-muted-foreground mt-1.5 uppercase">ENGINEERING ENGINE</span>
+            <span className="font-mono text-[5px] sm:text-[6px] md:text-[7px] lg:text-[8px] tracking-widest text-muted-foreground mt-1.5 uppercase">Deployment Architecture</span>
           </div>
         </div>
       </div>
