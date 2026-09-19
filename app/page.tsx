@@ -10,6 +10,7 @@ import { skills } from "@/data/skills";
 import { useState } from "react";
 import { ArrowRight, ArrowLeft, ChevronDown, ExternalLink } from "lucide-react";
 import profileImage from "@/public/satyajit_profile.jpg";
+import { SystemArchitecture } from "@/components/SystemArchitecture";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -76,26 +77,6 @@ export default function SinglePagePortfolio() {
               ))}
             </div>
 
-            {/* Metrics */}
-            <div className="flex flex-wrap gap-6 mt-6 font-mono text-[10px] tracking-widest uppercase text-muted-foreground">
-              <div className="flex flex-col items-center lg:items-start gap-1">
-                <span className="text-lg font-bold text-foreground tabular-nums">{profile.metrics.githubRepos}</span>
-                <span>Repositories</span>
-              </div>
-              <div className="flex flex-col items-center lg:items-start gap-1">
-                <span className="text-lg font-bold text-foreground tabular-nums">{profile.metrics.projectsShipped}</span>
-                <span>Projects</span>
-              </div>
-              <div className="flex flex-col items-center lg:items-start gap-1">
-                <span className="text-lg font-bold text-foreground tabular-nums">{profile.metrics.technologies}+</span>
-                <span>Technologies</span>
-              </div>
-              <div className="flex flex-col items-center lg:items-start gap-1">
-                <span className="text-lg font-bold text-foreground tabular-nums">{profile.metrics.yearsCoding}</span>
-                <span>Years</span>
-              </div>
-            </div>
-
             <p className="text-muted-foreground/60 font-mono text-[10px] uppercase tracking-widest mt-4">
               {profile.title}
             </p>
@@ -122,14 +103,14 @@ export default function SinglePagePortfolio() {
       </section>
 
       {/* ================================================== */}
-      {/* 02 — SELECTED WORK */}
+      {/* 02 — SOME WORKS*/}
       {/* ================================================== */}
       <section id="projects" className="w-full relative py-24 px-6 md:px-8 bg-background border-t border-foreground/5">
         <div className="w-full max-w-5xl mx-auto">
           <motion.div {...fadeUp}>
             <SectionLabel number="02" label="PROJECTS" />
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-16">
-              Selected Work
+              Some Works
             </h2>
           </motion.div>
 
@@ -367,12 +348,27 @@ export default function SinglePagePortfolio() {
       </section>
 
       {/* ================================================== */}
-      {/* 05 — EDUCATION */}
+      {/* 05 — SYSTEM ARCHITECTURE */}
+      {/* ================================================== */}
+      <section id="architecture" className="w-full relative bg-background border-t border-foreground/5">
+        <div className="max-w-5xl mx-auto w-full pt-24 px-6 md:px-8">
+          <motion.div {...fadeUp}>
+            <SectionLabel number="05" label="SYSTEM ARCHITECTURE" />
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-16">
+              Engineering Engine
+            </h2>
+          </motion.div>
+        </div>
+        <SystemArchitecture />
+      </section>
+
+      {/* ================================================== */}
+      {/* 06 — EDUCATION */}
       {/* ================================================== */}
       <section id="education" className="w-full relative py-24 px-6 md:px-8 bg-background border-t border-foreground/5">
         <div className="max-w-5xl mx-auto w-full">
           <motion.div {...fadeUp}>
-            <SectionLabel number="05" label="EDUCATION" />
+            <SectionLabel number="06" label="EDUCATION" />
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-16">
               Educational Background
             </h2>
@@ -409,12 +405,12 @@ export default function SinglePagePortfolio() {
       </section>
 
       {/* ================================================== */}
-      {/* 06 — CERTIFICATIONS */}
+      {/* 07 — CERTIFICATIONS */}
       {/* ================================================== */}
       <section id="achievements" className="w-full relative py-24 px-6 md:px-8 bg-background border-t border-foreground/5">
         <div className="max-w-5xl mx-auto w-full">
           <motion.div {...fadeUp}>
-            <SectionLabel number="06" label="CERTIFICATIONS" />
+            <SectionLabel number="07" label="CERTIFICATIONS" />
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-16">
               Achievements
             </h2>
@@ -469,12 +465,12 @@ export default function SinglePagePortfolio() {
       </section>
 
       {/* ================================================== */}
-      {/* 08 — FOOTER */}
+      {/* 09 — FOOTER */}
       {/* ================================================== */}
       <section id="contact" className="w-full relative py-24 md:py-32 px-6 md:px-8 bg-background">
         <div className="max-w-5xl mx-auto w-full">
           <motion.div {...fadeUp} className="flex flex-col items-center text-center">
-            <SectionLabel number="08" label="CONTACT" />
+            <SectionLabel number="09" label="CONTACT" />
 
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4 max-w-xl">
               LET'S CREATE SOMETHING MEANINGFUL
