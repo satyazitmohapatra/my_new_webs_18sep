@@ -5,6 +5,7 @@ const repo = 'my_new_webs_18sep';
 
 const nextConfig: NextConfig = {
   output: "export",
+  trailingSlash: true,
   basePath: isGithubActions ? `/${repo}` : "",
   images: {
     unoptimized: true,
