@@ -205,7 +205,7 @@ export default function SinglePagePortfolio() {
                     )}
                     <Link
                       href={`/projects/${currentProject.id}`}
-                      className="flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase text-muted-foreground hover:text-navy transition-colors duration-200"
+                      className="flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase bg-navy text-white px-4 py-2 hover:bg-navy/90 transition-colors duration-200 shadow-sm"
                     >
                       View Details <ArrowRight size={10} />
                     </Link>
@@ -219,7 +219,7 @@ export default function SinglePagePortfolio() {
               <button
                 onClick={() => setCurrentProjectIdx((p) => Math.max(0, p - 1))}
                 disabled={currentProjectIdx === 0}
-                className="w-10 h-10 flex items-center justify-center border border-foreground/10 text-foreground hover:border-foreground/30 hover:text-navy disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-200"
+                className="w-10 h-10 flex items-center justify-center bg-navy text-white hover:bg-navy/90 disabled:bg-foreground/5 disabled:text-foreground/20 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
                 aria-label="Previous project"
               >
                 <ArrowLeft size={16} />
@@ -230,7 +230,7 @@ export default function SinglePagePortfolio() {
               <button
                 onClick={() => setCurrentProjectIdx((p) => Math.min(projects.length - 1, p + 1))}
                 disabled={currentProjectIdx === projects.length - 1}
-                className="w-10 h-10 flex items-center justify-center border border-foreground/10 text-foreground hover:border-foreground/30 hover:text-navy disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-200"
+                className="w-10 h-10 flex items-center justify-center bg-navy text-white hover:bg-navy/90 disabled:bg-foreground/5 disabled:text-foreground/20 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
                 aria-label="Next project"
               >
                 <ArrowRight size={16} />
@@ -267,8 +267,8 @@ export default function SinglePagePortfolio() {
                       {log.title}
                     </h3>
                   </div>
-                  <div className={`text-muted-foreground transition-transform duration-200 shrink-0 ${expandedLogId === log.id ? "rotate-180" : ""}`}>
-                    <ChevronDown size={16} />
+                  <div className={`w-8 h-8 flex items-center justify-center bg-navy text-white shrink-0 transition-transform duration-200 shadow-sm ${expandedLogId === log.id ? "rotate-180" : ""}`}>
+                    <ChevronDown size={14} />
                   </div>
                 </button>
 
@@ -305,12 +305,12 @@ export default function SinglePagePortfolio() {
       </section>
 
       {/* ================================================== */}
-      {/* 04 — CAPABILITIES */}
+      {/* 04 — SKILLS */}
       {/* ================================================== */}
       <section id="skills" className="w-full relative py-24 px-6 md:px-8 bg-background border-t border-foreground/5">
         <div className="max-w-5xl mx-auto w-full">
           <motion.div {...fadeUp}>
-            <SectionLabel number="04" label="CAPABILITIES" />
+            <SectionLabel number="04" label="SKILLS" />
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-16">
               What I Know
             </h2>
@@ -331,8 +331,8 @@ export default function SinglePagePortfolio() {
                       {skillGroup.capability}
                     </h3>
                   </div>
-                  <div className={`text-muted-foreground transition-transform duration-200 shrink-0 ${expandedSkillIdx === idx ? "rotate-180" : ""}`}>
-                    <ChevronDown size={14} />
+                  <div className={`w-7 h-7 flex items-center justify-center bg-navy text-white shrink-0 transition-transform duration-200 shadow-sm ${expandedSkillIdx === idx ? "rotate-180" : ""}`}>
+                    <ChevronDown size={12} />
                   </div>
                 </button>
 
@@ -485,7 +485,7 @@ export default function SinglePagePortfolio() {
 
             <a
               href={`mailto:${profile.contact.email}`}
-              className="font-mono text-sm tracking-widest text-foreground border-b border-navy pb-1 hover:text-navy transition-colors duration-200"
+              className="inline-flex items-center justify-center bg-navy text-white px-8 py-4 font-mono text-xs md:text-sm tracking-widest uppercase hover:bg-navy/90 transition-transform hover:scale-[1.02] shadow-md shadow-navy/10"
             >
               {profile.contact.email}
             </a>

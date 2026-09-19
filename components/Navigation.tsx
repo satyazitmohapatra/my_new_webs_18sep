@@ -78,7 +78,7 @@ export function Navigation() {
 
           <button
             onClick={toggleTheme}
-            className="w-8 h-8 flex items-center justify-center text-muted-foreground hover:text-foreground border border-foreground/10 hover:border-foreground/30 transition-all duration-200"
+            className="w-8 h-8 flex items-center justify-center bg-navy text-white hover:bg-navy/90 transition-all duration-200 shadow-sm"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
