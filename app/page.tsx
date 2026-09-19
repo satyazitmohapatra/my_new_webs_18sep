@@ -25,7 +25,12 @@ export default function SinglePagePortfolio() {
       <section id="home" className="min-h-[100dvh] w-full relative pt-32 px-6 md:px-24 flex items-center justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-7xl items-center">
           {/* Left Text */}
-          <div className="flex flex-col gap-6 z-10 text-center lg:text-left items-center lg:items-start">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col gap-6 z-10 text-center lg:text-left items-center lg:items-start"
+          >
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-foreground">
               Hi, I am {profile.name.split(" ")[0]}.
             </h2>
@@ -35,20 +40,26 @@ export default function SinglePagePortfolio() {
             <p className="text-muted-foreground/80 font-mono text-xs uppercase tracking-widest mt-8">
               {profile.title}
             </p>
-          </div>
+          </motion.div>
 
           {/* Right Image */}
-          <div className="flex justify-center lg:justify-end z-10">
-            <div className="w-full max-w-md aspect-square overflow-hidden bg-muted shadow-2xl relative group">
-              <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+            className="flex justify-center lg:justify-end z-10"
+          >
+            <div className="w-full max-w-md aspect-square overflow-hidden shadow-2xl relative group bg-background/5 rounded-sm">
+              <div className="absolute inset-0 bg-background/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
               <Image 
                 src={profileImage} 
                 alt="Satyajit Mohapatra" 
                 fill
-                className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
+                priority
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -58,13 +69,21 @@ export default function SinglePagePortfolio() {
       <section id="projects" className="w-full relative py-32 px-6 md:px-12 bg-background flex flex-col justify-center overflow-hidden border-t border-foreground/10">
         
         <div className="w-full flex flex-col items-center justify-center relative max-w-5xl mx-auto">
-          <div className="flex items-center gap-2 mb-12">
-            <div className="w-2 h-2 bg-foreground" />
-            <div className="w-2 h-2 bg-foreground" />
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground uppercase mb-16 text-center">
-            SELECTED WORK
-          </h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-center"
+          >
+            <div className="flex items-center gap-2 mb-12">
+              <div className="w-2 h-2 bg-foreground" />
+              <div className="w-2 h-2 bg-foreground" />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground uppercase mb-16 text-center">
+              SELECTED WORK
+            </h2>
+          </motion.div>
 
           <div className="w-full relative">
             <AnimatePresence mode="wait">
@@ -134,13 +153,20 @@ export default function SinglePagePortfolio() {
       {/* ================================================== */}
       <section id="battle-logs" className="w-full relative py-24 px-6 md:px-12 bg-background border-t border-foreground/10">
         <div className="max-w-5xl mx-auto w-full">
-          <div className="flex items-center gap-2 mb-12">
-            <div className="w-2 h-2 bg-foreground" />
-            <div className="w-2 h-2 bg-foreground" />
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground uppercase mb-16">
-            BATTLE LOGS
-          </h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex items-center gap-2 mb-12">
+              <div className="w-2 h-2 bg-foreground" />
+              <div className="w-2 h-2 bg-foreground" />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground uppercase mb-16">
+              BATTLE LOGS
+            </h2>
+          </motion.div>
           <div className="w-full border-t border-foreground/20">
             {battleLogs.map((log) => (
               <div key={log.id} className="border-b border-foreground/20 py-8">
@@ -192,13 +218,20 @@ export default function SinglePagePortfolio() {
       {/* ================================================== */}
       <section id="skills" className="w-full relative py-24 px-6 md:px-12 bg-background border-t border-foreground/10">
         <div className="max-w-5xl mx-auto w-full">
-          <div className="flex items-center gap-2 mb-12">
-            <div className="w-2 h-2 bg-foreground" />
-            <div className="w-2 h-2 bg-foreground" />
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground uppercase mb-16">
-            WHAT I KNOW
-          </h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex items-center gap-2 mb-12">
+              <div className="w-2 h-2 bg-foreground" />
+              <div className="w-2 h-2 bg-foreground" />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground uppercase mb-16">
+              WHAT I KNOW
+            </h2>
+          </motion.div>
           <div className="flex flex-col gap-4">
             {skills.map((skillGroup, idx) => (
               <div key={idx} className="flex flex-col border-b border-foreground/20 pb-4">
@@ -246,13 +279,20 @@ export default function SinglePagePortfolio() {
       {/* ================================================== */}
       <section id="education" className="w-full relative py-24 px-6 md:px-12 bg-background border-t border-foreground/10">
         <div className="max-w-5xl mx-auto w-full">
-          <div className="flex items-center gap-2 mb-12">
-            <div className="w-2 h-2 bg-foreground" />
-            <div className="w-2 h-2 bg-foreground" />
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground uppercase mb-16">
-            EDUCATIONAL BACKGROUND
-          </h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex items-center gap-2 mb-12">
+              <div className="w-2 h-2 bg-foreground" />
+              <div className="w-2 h-2 bg-foreground" />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground uppercase mb-16">
+              EDUCATIONAL BACKGROUND
+            </h2>
+          </motion.div>
           
           <div className="flex flex-col gap-8 w-full">
             {[
@@ -279,13 +319,20 @@ export default function SinglePagePortfolio() {
       {/* ================================================== */}
       <section id="achievements" className="w-full relative py-24 px-6 md:px-12 bg-background border-t border-foreground/10">
         <div className="max-w-5xl mx-auto w-full">
-          <div className="flex items-center gap-2 mb-12">
-            <div className="w-2 h-2 bg-foreground" />
-            <div className="w-2 h-2 bg-foreground" />
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground uppercase mb-16">
-            ACHIEVEMENTS
-          </h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex items-center gap-2 mb-12">
+              <div className="w-2 h-2 bg-foreground" />
+              <div className="w-2 h-2 bg-foreground" />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground uppercase mb-16">
+              ACHIEVEMENTS
+            </h2>
+          </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
@@ -370,7 +417,13 @@ export default function SinglePagePortfolio() {
       {/* 8. FOOTER */}
       {/* ================================================== */}
       <section id="contact" className="w-full relative pt-32 pb-48 px-6 md:px-12 bg-background overflow-hidden flex flex-col justify-center min-h-[60vh]">
-        <div className="w-full flex flex-col items-center justify-center text-center z-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="w-full flex flex-col items-center justify-center text-center z-20"
+        >
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-foreground uppercase mb-8 max-w-2xl">
             LET'S CREATE SOMETHING MEANINGFUL
           </h2>
@@ -385,7 +438,7 @@ export default function SinglePagePortfolio() {
             <a href={profile.contact.github} target="_blank" className="hover:text-foreground transition-colors">[ GITHUB ]</a>
             <a href={profile.contact.linkedin} target="_blank" className="hover:text-foreground transition-colors">[ LINKEDIN ]</a>
           </div>
-        </div>
+        </motion.div>
 
         {/* Giant Scattered Name Background */}
         <div className="absolute -bottom-10 md:-bottom-20 left-0 w-full overflow-hidden flex justify-center items-end pointer-events-none select-none z-10 opacity-30 h-3/4">
