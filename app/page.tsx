@@ -185,26 +185,6 @@ export default function SinglePagePortfolio() {
                         <ArrowRight size={16} />
                       </button>
 
-                      {/* Mobile Arrows (Bottom) */}
-                      <div className="flex md:hidden items-center justify-center gap-6 w-full mt-2">
-                        <button
-                          onClick={() => setCurrentProjectIdx((p) => Math.max(0, p - 1))}
-                          disabled={currentProjectIdx === 0}
-                          className="shrink-0 w-10 h-10 flex items-center justify-center bg-background border border-foreground/10 text-muted-foreground hover:text-accent-fg hover:bg-accent hover:border-accent disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200 rounded-full shadow-sm"
-                          aria-label="Previous project"
-                        >
-                          <ArrowLeft size={16} />
-                        </button>
-                        
-                        <button
-                          onClick={() => setCurrentProjectIdx((p) => Math.min(projects.length - 1, p + 1))}
-                          disabled={currentProjectIdx === projects.length - 1}
-                          className="shrink-0 w-10 h-10 flex items-center justify-center bg-background border border-foreground/10 text-muted-foreground hover:text-accent-fg hover:bg-accent hover:border-accent disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200 rounded-full shadow-sm"
-                          aria-label="Next project"
-                        >
-                          <ArrowRight size={16} />
-                        </button>
-                      </div>
                     </div>
                   )}
 
