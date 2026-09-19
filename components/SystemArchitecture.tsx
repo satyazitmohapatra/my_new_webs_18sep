@@ -17,14 +17,14 @@ export function SystemArchitecture() {
       delay: "0s"
     },
     {
-      id: 'api', num: '02', title: 'API / SERVICES', tech: ['FastAPI', 'REST', 'Flask'],
+      id: 'api', num: '02', title: 'API / BACKEND', tech: ['FastAPI', 'REST', 'Flask'],
       x: 60, y: 255, w: 180, h: 90,
       path: 'M 400 300 L 240 300',
       animPath: 'M 240 300 L 400 300',
       delay: "1.5s"
     },
     {
-      id: 'cicd', num: '03', title: 'CI/CD PIPELINE', tech: ['GitHub Actions', 'Docker'],
+      id: 'db', num: '05', title: 'DATABASE', tech: ['PostgreSQL', 'MySQL'],
       x: 60, y: 430, w: 180, h: 90,
       path: 'M 400 330 L 300 330 Q 290 330 290 340 L 290 465 Q 290 475 280 475 L 240 475',
       animPath: 'M 240 475 L 280 475 Q 290 475 290 465 L 290 340 Q 290 330 300 330 L 400 330',
@@ -38,7 +38,7 @@ export function SystemArchitecture() {
       delay: "1s"
     },
     {
-      id: 'db', num: '05', title: 'DATABASE', tech: ['PostgreSQL', 'MySQL'],
+      id: 'cicd', num: '03', title: 'CI/CD PIPELINE', tech: ['GitHub Actions', 'Docker'],
       x: 760, y: 255, w: 180, h: 90,
       path: 'M 600 300 L 760 300',
       animPath: 'M 600 300 L 760 300',

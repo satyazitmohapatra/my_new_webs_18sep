@@ -12,11 +12,13 @@ export type Project = {
   deployment?: string;
   github?: string;
   demo?: string;
+  image?: string;
 };
 
 export const projects: Project[] = [
   {
     id: "PROJECT_001",
+    image: "/projects/food_delivery.png",
     title: "FOOD DELIVERY PLATFORM",
     description: "Full-stack food delivery application with secure management and automated deployment.",
     status: "DEPLOYED",
@@ -29,7 +31,8 @@ export const projects: Project[] = [
   },
   {
     id: "PROJECT_002",
-    title: "HEALTH DIAGNOSTIC HUB",
+    image: "/projects/heart_disease.png",
+    title: "HEART DISEASE PREDICTOR",
     description: "Centralized web application hosting multiple ML models for disease prediction.",
     status: "DEPLOYED",
     stack: ["Python", "Machine Learning", "Web", "Model Optimization"],
@@ -40,7 +43,8 @@ export const projects: Project[] = [
   },
   {
     id: "PROJECT_003",
-    title: "CITYZEN",
+    image: "/projects/citizen_grievance.png",
+    title: "CITYZEN - CIVIC GRAVIENCE APP",
     description: "Crowd-sourced civic issue reporting and tracking platform.",
     status: "DEPLOYED",
     stack: ["Flask", "MySQL", "Web", "Data Visualization"],
@@ -51,6 +55,7 @@ export const projects: Project[] = [
   },
   {
     id: "PROJECT_004",
+    image: "/projects/laptop_price.png",
     title: "LAPTOP PRICE PREDICTOR",
     description: "Predictive ML model to estimate laptop prices based on hardware configurations.",
     status: "DEPLOYED",
@@ -62,7 +67,8 @@ export const projects: Project[] = [
   },
   {
     id: "PROJECT_005",
-    title: "BANGALORE HOUSE PREDICTOR",
+    image: "/projects/bangalore_real_estate.png",
+    title: "BANGALORE HOUSE PRICE PREDICTOR",
     description: "Regression-based model integrated with a user-friendly frontend for real-time property estimates.",
     status: "DEPLOYED",
     stack: ["Python", "Machine Learning", "Web", "Regression"],
@@ -73,6 +79,7 @@ export const projects: Project[] = [
   },
   {
     id: "PROJECT_006",
+    image: "/projects/olympic_data.png",
     title: "OLYMPIC DATA ANALYSIS",
     description: "Interactive data visualization of 120 years of Olympic athlete performance.",
     status: "DEPLOYED",

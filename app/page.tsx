@@ -151,6 +151,18 @@ export default function SinglePagePortfolio() {
                     {currentProject.description}
                   </p>
 
+                  {/* Thumbnail Image */}
+                  {currentProject.image && (
+                    <div className="relative w-full aspect-[3/1] mb-8 border border-foreground/10 overflow-hidden group">
+                      <Image 
+                        src={currentProject.image} 
+                        alt={currentProject.title} 
+                        fill 
+                        className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]" 
+                      />
+                    </div>
+                  )}
+
                   {/* Stack */}
                   <div className="flex flex-wrap gap-2 mb-8">
                     {currentProject.stack.map((tech) => (
