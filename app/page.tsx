@@ -222,7 +222,7 @@ export default function SinglePagePortfolio() {
                       </a>
                     )}
                     <Link
-                      href={`/projects/${currentProject.id}`}
+                      href={`/${currentProject.id}`}
                       className="flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase bg-accent text-accent-fg px-4 py-2 hover:bg-accent/90 transition-colors duration-200 shadow-sm"
                     >
                       View Details <ArrowRight size={10} />
