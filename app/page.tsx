@@ -125,9 +125,9 @@ export default function SinglePagePortfolio() {
                 className="w-full"
               >
                 {/* Project Card */}
-                <div className="border border-foreground/10 p-8 md:p-12">
+                <div className="border border-foreground/10 p-4 sm:p-6 md:p-12">
                   {/* Header Row */}
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                  <div className="hidden md:flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                     <div className="flex items-center gap-4">
                       <span className="font-mono text-[10px] tracking-widest text-muted-foreground uppercase">
                         {currentProject.id.replace("_", " ")}
@@ -142,12 +142,12 @@ export default function SinglePagePortfolio() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-4">
+                  <h3 className="hidden md:block text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-4">
                     {currentProject.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl mb-8">
+                  <p className="hidden md:block text-muted-foreground text-sm leading-relaxed max-w-2xl mb-8">
                     {currentProject.description}
                   </p>
 
@@ -189,7 +189,7 @@ export default function SinglePagePortfolio() {
                   )}
 
                   {/* Stack */}
-                  <div className="flex flex-wrap gap-2 mb-8">
+                  <div className="hidden md:flex flex-wrap gap-2 mb-8">
                     {currentProject.stack.map((tech) => (
                       <span
                         key={tech}
@@ -202,7 +202,7 @@ export default function SinglePagePortfolio() {
 
                   {/* Architecture (if exists) */}
                   {currentProject.architecture && (
-                    <div className="border-t border-foreground/5 pt-6 mb-6">
+                    <div className="hidden md:block border-t border-foreground/5 pt-6 mb-6">
                       <span className="font-mono text-[9px] tracking-widest text-accent uppercase block mb-2">ARCHITECTURE</span>
                       <p className="font-mono text-xs text-muted-foreground leading-relaxed">
                         {currentProject.architecture}
@@ -392,7 +392,7 @@ export default function SinglePagePortfolio() {
           <motion.div {...fadeUp}>
             <SectionLabel number="05" label="SYSTEM ARCHITECTURE" />
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-16">
-              Engineering Engine
+              Deployment Achitecture
             </h2>
           </motion.div>
         </div>
